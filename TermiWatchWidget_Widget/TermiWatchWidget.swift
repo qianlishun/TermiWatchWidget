@@ -16,6 +16,20 @@ struct WidgetForWatchOS: WidgetBundle {
     }
 }
 
+
+struct CircularWidget: Widget{
+    let kind: String = "CircularWidget"
+
+    var body: some WidgetConfiguration {
+        
+        StaticConfiguration(kind: kind, provider: CircularProvider()) { entry in
+            CircularWidgetEntryView(entry: entry)
+                .containerBackground(.fill.tertiary, for: .widget)
+        }.configurationDisplayName("Circular")
+    }
+
+}
+
 struct WeatherWidget: Widget {
     let kind: String = "WeatherWidget"
 
@@ -38,6 +52,49 @@ struct HealthWidget: Widget {
             HealthWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }.configurationDisplayName("Health")
+    }
+
+}
+
+
+struct CircularEntry: TimelineEntry {
+    var date: Date = Date()
+    let image: String
+    let string: String
+    init(image: String, string: String) {
+        self.image = image
+        self.string = string
+    }
+    init(){
+        self.init(image: "", string: "Q")
+    }
+}
+
+struct WeatherEntry: TimelineEntry {
+    var date: Date = Date()
+    let weather: WeatherViewInfo
+}
+
+struct HealthEntry: TimelineEntry {
+    var date: Date = Date()
+    let health: HealthInfo
+}
+
+struct CircularProvider: TimelineProvider {
+  
+    func placeholder(in context: Context) -> CircularEntry {
+        return CircularEntry(image: "", string: "Q")
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (CircularEntry) -> ()) {
+        let entry = CircularEntry(image: "", string: "Q")
+        completion(entry)
+    }
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        let entry = CircularEntry(image: "", string: "Q")
+        let timeline = Timeline(entries: [entry], policy: .never)
+        completion(timeline)
     }
 
 }
@@ -109,6 +166,26 @@ struct HealthProvider: TimelineProvider {
             let timeline = Timeline(entries: [entry], policy: .never)
             
             completion(timeline)
+        }
+    }
+}
+
+struct CircularWidgetEntryView : View{
+    var entry: CircularProvider.Entry
+    @Environment(\.widgetFamily) var family
+
+    var body: some View {
+        switch family {
+        case .accessoryCircular:
+            
+            if(entry.image.count>0){
+                Image(entry.image, bundle: .main)
+            }else{
+                Text(entry.string)
+            }
+            
+        default:
+            VStack{}
         }
     }
 }
@@ -238,16 +315,6 @@ struct WeatherViewInfo {
     }
 }
 
-struct WeatherEntry: TimelineEntry {
-    var date: Date = Date()
-    let weather: WeatherViewInfo
-}
-
-struct HealthEntry: TimelineEntry {
-    var date: Date = Date()
-    let health: HealthInfo
-}
-
 struct MyText: View {
     let font = Font.system(size: 13)
     let text: String
@@ -273,4 +340,11 @@ struct MyText: View {
     HealthWidget()
 } timeline: {
     HealthEntry(health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
+}
+
+
+#Preview(as: .accessoryCircular) {
+    CircularWidget()
+} timeline: {
+    CircularEntry(image: "", string: "Q")
 }
