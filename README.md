@@ -10,11 +10,13 @@ Due to the fact that the new version of watchOS no longer supports app persisten
 
 here we use widgets to achieve a Watch Face similar to the Terminal effect
 
+Thank for TermiWatch https://github.com/kuglee/TermiWatch/
+
 # How to install
 
 ## Prerequisites && Adding a developer account to Xcode
-  Refer to TermiWatchWidget's tutorial
-  - *TermiWatchWidget* https://github.com/kuglee/TermiWatch/blob/master/README.md
+  Refer to TermiWatch's tutorial
+  - *TermiWatcht* https://github.com/kuglee/TermiWatch/blob/master/README.md
 ## Configuring the project
   1. Download the latest version:
   - **Xcode 11 or later**: https://github.com/qianlishun/TermiWatchWidget/archive/refs/heads/main.zip
