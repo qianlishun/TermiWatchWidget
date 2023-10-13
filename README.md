@@ -49,7 +49,7 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
   1. Open Face Gallery Find and add Modular Duo Face  
   ![Duo Modular](Screenshots/Watch_Setting1.png)
   2. Set Complications, Set these 3 options  
-  ![Complications](Screenshots/Watch_Setting2.png)
-  3. Find TerminalWatchWidget, And set Top Left(Circular), Middle(Weather), Bottom(Health)  
-  ![Set Widget](Screenshots/Watch_Setting3.png)
+  <img src="Screenshots/Watch_Setting2.png" width="40%" height="auto" />
+  4. Find TerminalWatchWidget, And set Top Left(Circular), Middle(Weather), Bottom(Health)  
+  <img src="Screenshots/Watch_Setting3.png" width="40%" height="auto" />
 
