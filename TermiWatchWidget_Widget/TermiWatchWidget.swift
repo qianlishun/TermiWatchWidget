@@ -8,14 +8,31 @@
 import WidgetKit
 import SwiftUI
 
+let terminalName = "void"
+let leftTopImageName = "LeftTopImage"
+
+let colorAlert1 = Color.yellow
+let colorAlert2 = Color.red
+let colorTemp1 = Color.white
+let colorTemp2 = Color.blue
+let colorCurr = Color.white
+let colorNext = Color.blue
+
+let colorKeep1 = Color.cyan
+let colorKeep2 = Color.brown
+let colorStep = Color.indigo
+let colorKcal = Color.red
+let colorHR = Color.orange
+
+
 @main
 struct WidgetForWatchOS: WidgetBundle {
     var body: some Widget {
+        CircularWidget()
         WeatherWidget()
         HealthWidget()
     }
 }
-
 
 struct CircularWidget: Widget{
     let kind: String = "CircularWidget"
@@ -56,43 +73,19 @@ struct HealthWidget: Widget {
 
 }
 
-
-struct CircularEntry: TimelineEntry {
-    var date: Date = Date()
-    let image: String
-    let string: String
-    init(image: String, string: String) {
-        self.image = image
-        self.string = string
-    }
-    init(){
-        self.init(image: "", string: "Q")
-    }
-}
-
-struct WeatherEntry: TimelineEntry {
-    var date: Date = Date()
-    let weather: WeatherViewInfo
-}
-
-struct HealthEntry: TimelineEntry {
-    var date: Date = Date()
-    let health: HealthInfo
-}
-
 struct CircularProvider: TimelineProvider {
   
     func placeholder(in context: Context) -> CircularEntry {
-        return CircularEntry(image: "", string: "Q")
+        return CircularEntry(image: leftTopImageName, string: "Q")
     }
 
     func getSnapshot(in context: Context, completion: @escaping (CircularEntry) -> ()) {
-        let entry = CircularEntry(image: "", string: "Q")
+        let entry = CircularEntry(image: leftTopImageName, string: "Q")
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let entry = CircularEntry(image: "", string: "Q")
+        let entry = CircularEntry(image: leftTopImageName, string: "Q")
         let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
     }
@@ -178,8 +171,9 @@ struct CircularWidgetEntryView : View{
         switch family {
         case .accessoryCircular:
             
-            if(entry.image.count>0){
-                Image(entry.image, bundle: .main)
+            let uiImage = UIImage(named: entry.image)
+            if(uiImage != nil){
+                Image(uiImage: uiImage!)
             }else{
                 Text(entry.string)
             }
@@ -205,13 +199,13 @@ struct WeatherWidgetEntryView : View {
         case .accessoryRectangular:
             VStack(alignment: .leading) {
                 HStack {
-                    MyText("user@void:~ $ now")
+                    MyText("user@\(terminalName):~ $ now")
                 }.frame(height: 10)
                 
                 HStack {
                     MyText("[ALER.]")
-                    Image(systemName: "exclamationmark.triangle").frame(width: 16).imageScale(.small).foregroundStyle(.yellow).minimumScaleFactor(0.8)
-                    Text(entry.weather.alert).font(font).foregroundStyle(.red)
+                    Image(systemName: "exclamationmark.triangle").frame(width: 16).imageScale(.small).foregroundStyle(colorAlert1).minimumScaleFactor(0.8)
+                    Text(entry.weather.alert).font(font).foregroundStyle(colorAlert1)
                 }.frame(height: 10)
                 
                 HStack {
@@ -222,24 +216,24 @@ struct WeatherWidgetEntryView : View {
                     HStack(spacing: 0){
                         MyText(temp.value)
                         MyText(temp.unit)
-                    }.foregroundColor(.white)
+                    }.foregroundColor(colorTemp1)
                     MyText("→")
                     HStack(spacing: 0){
                         MyText(temp2.value)
                         MyText(temp2.unit)
-                    }.foregroundColor(.blue)
+                    }.foregroundColor(colorTemp2)
                 }.frame(height: 10)
                 
                 HStack {
                     MyText("[CuRR]")
                     Image(systemName: entry.weather.current.symbol).frame(width: 15).imageScale(.small)
-                    Text(entry.weather.current.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(.white).minimumScaleFactor(0.8)
+                    Text(entry.weather.current.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(colorCurr).minimumScaleFactor(0.8)
                 }.frame(height: 10)
 
                 HStack {
                     MyText("[NEXT]")
                     Image(systemName: entry.weather.after1Hours.symbol).frame(width: 15).imageScale(.small)
-                    Text(entry.weather.after1Hours.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(.blue).minimumScaleFactor(0.8)
+                    Text(entry.weather.after1Hours.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(colorNext).minimumScaleFactor(0.8)
                 }.frame(height: 10)
 
             }
@@ -264,32 +258,32 @@ struct HealthWidgetEntryView : View {
                 HStack{
                     MyText("[KEEP]")
                     Image(systemName: "figure.run").imageScale(.small)
-                    MyText("\(entry.health.excerciseTime)").foregroundStyle(.cyan)
+                    MyText("\(entry.health.excerciseTime)").foregroundStyle(colorKeep1)
                     Image(systemName: "figure.stand").imageScale(.small)
-                    MyText("\(entry.health.standHours)").foregroundStyle(.brown)
+                    MyText("\(entry.health.standHours)").foregroundStyle(colorKeep2)
                     MyText("                               ")
                 }.frame(height: 10)
                 
                 HStack {
                     MyText("[STEP]")
                     Image(systemName: "figure.walk").imageScale(.small)
-                    MyText("\(entry.health.steps)").foregroundStyle(.indigo)
+                    MyText("\(entry.health.steps)").foregroundStyle(colorStep)
                 }.frame(height: 10)
                 
                 HStack {
                     MyText("[KCAL]")
                     Image(systemName: "flame").imageScale(.small)
-                    MyText("\(entry.health.excercise)").foregroundStyle(.red)
+                    MyText("\(entry.health.excercise)").foregroundStyle(colorKcal)
                 }.frame(height: 10)
                 
                 HStack {
                     MyText("[L_HR]")
                     Image(systemName: "heart.circle").imageScale(.small)
-                    MyText("\(entry.health.heartRate)").foregroundStyle(.orange)
+                    MyText("\(entry.health.heartRate)").foregroundStyle(colorHR)
                 }.frame(height: 10)
                 
                 HStack {
-                    MyText("user@void:~ $ ")
+                    MyText("user@\(terminalName):~ $ ")
                 }.frame(height: 10.5)
             }
         default:
@@ -313,6 +307,29 @@ struct WeatherViewInfo {
     init(){
         self.init(current: QWeather(), after1Hours: QWeather(), alert: "" )
     }
+}
+
+struct CircularEntry: TimelineEntry {
+    var date: Date = Date()
+    let image: String
+    let string: String
+    init(image: String, string: String) {
+        self.image = image
+        self.string = string
+    }
+    init(){
+        self.init(image: "", string: "Q")
+    }
+}
+
+struct WeatherEntry: TimelineEntry {
+    var date: Date = Date()
+    let weather: WeatherViewInfo
+}
+
+struct HealthEntry: TimelineEntry {
+    var date: Date = Date()
+    let health: HealthInfo
 }
 
 struct MyText: View {
@@ -342,9 +359,8 @@ struct MyText: View {
     HealthEntry(health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
 }
 
-
 #Preview(as: .accessoryCircular) {
     CircularWidget()
 } timeline: {
-    CircularEntry(image: "", string: "Q")
+    CircularEntry(image: leftTopImageName, string: "Q")
 }
