@@ -41,8 +41,20 @@ class HealthObserver {
     /// - Tag: Health Store
     let healthStore: HKHealthStore
     
+    let hkDataTypesOfInterest = Set([
+        HKObjectType.activitySummaryType(),
+        HKCategoryType.categoryType(forIdentifier: .appleStandHour)!,
+        HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+        HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+        HKObjectType.quantityType(forIdentifier: .heartRate)!,
+        HKObjectType.quantityType(forIdentifier: .stepCount)!,
+    ])
+    
     init() {
         self.healthStore = HKHealthStore()
+        healthStore.requestAuthorization(toShare: nil, read: hkDataTypesOfInterest) { result,error in
+            print(result.description + " \n " + (error?.localizedDescription ?? ""))
+        }
     }
     
     func fetchSample(quantityType: HKQuantityType, unit: HKUnit, completion: @escaping (Int) -> ()){
@@ -67,7 +79,7 @@ class HealthObserver {
 //               for sample in results {
                 if let quantitySample = results.first as? HKQuantitySample {
                    let value = quantitySample.quantity.doubleValue(for: unit)
-                   print("\(quantityType.identifier),\(quantityType.description), \(value) \(unit.unitString)")
+//                   print("\(quantityType.identifier),\(quantityType.description), \(value) \(unit.unitString)")
                    completion(Int(value))
                }
 //               }
@@ -172,61 +184,24 @@ class HealthObserver {
 // MARK: - HealthObserver extension : Keep
 extension HealthObserver {
     
-    func getHealthInfo() async  -> HealthInfo {
-       
-        let steps = await getCurrentSteps()
+    func getHealthInfo(completion: @escaping (HealthInfo) -> ()) {
         
-        let excercise = await getActiveEnergyBurned()
-        let excerciseTime = await getExerciseTime()
-        let standHours = await getStandHours()
-        
-        let heartRate = await getHeartRate()
-
-        let health = HealthInfo(steps: steps, excercise: excercise, excerciseTime: excerciseTime, standHours: standHours, heartRate: heartRate)
-        
-        return health
-    }
-    
-    func getCurrentSteps()async -> Int {
-        await withCheckedContinuation({ continuation in
-            getCurrentSteps() { value in
-                continuation.resume(returning: value)
+        print("getHealthInfo...")
+        self.getCurrentSteps { steps in
+            self.getActiveEnergyBurned { excercise in
+                self.getExerciseTime { excerciseTime in
+                    self.getStandHours { standHours in
+                        self.getHeartRate { heartRate in
+                            let health = HealthInfo(steps: steps, excercise: excercise, excerciseTime: excerciseTime, standHours: standHours, heartRate: heartRate)
+                                completion(health)
+                        }
+                    }
+                }
             }
-        })
+        }
     }
     
-    func getActiveEnergyBurned()async -> Int {
-        await withCheckedContinuation({ continuation in
-            getActiveEnergyBurned() { value in
-                continuation.resume(returning: value)
-            }
-        })
-    }
-    
-    func getExerciseTime()async -> Int {
-        await withCheckedContinuation({ continuation in
-            getExerciseTime() { value in
-                continuation.resume(returning: value)
-            }
-        })
-    }
-    
-    func getStandHours()async -> Int {
-        await withCheckedContinuation({ continuation in
-            getStandHours() { value in
-                continuation.resume(returning: value)
-            }
-        })
-    }
-    
-    func getHeartRate()async -> Int {
-        await withCheckedContinuation({ continuation in
-            getHeartRate() { value in
-                continuation.resume(returning: value)
-            }
-        })
-    }
-    
+   
     func getCurrentSteps(completion: @escaping (Int) -> ()) {
         let type: HKQuantityType = HKQuantityType(HKQuantityTypeIdentifier.stepCount)
         

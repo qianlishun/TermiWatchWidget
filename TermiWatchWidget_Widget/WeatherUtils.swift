@@ -8,6 +8,7 @@
 import Foundation
 import WeatherKit
 import CoreLocation
+import SwiftUI
 
 struct WeatherInfo {
     let current: QWeather
@@ -121,18 +122,36 @@ func getWeather(location: CLLocation, afterHours: Int) async throws -> WeatherIn
 
 
 class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
+    @AppStorage("LastLocation", store: UserDefaults(suiteName: "group.com.void.termiWatch"))
+    var lastLocation: String = "39.9042, 116.4074"{ // Beijing
+        didSet{
+            print("lastLocation didset")
+        }
+    }
+    @AppStorage("LastLocationTime", store: UserDefaults(suiteName: "group.com.void.termiWatch"))
+    var lastLocationTime: String = ""{
+        didSet{
+            print("LastLocationTime didset")
+        }
+    }
+
+
     var locationManager: CLLocationManager?
     private var handler: ((CLLocation) -> Void)?
+    
 //    var lastLati = UserDefaults.standard.object(forKey: "LastLocation.lati") ?? 0
 //    var lastLong = UserDefaults.standard.object(forKey: "LastLocation.long") ?? 0
 //    var updateTime:Date = UserDefaults.standard.object(forKey: "LastLocationTime") as? Date ?? Date.init(timeIntervalSinceNow: -30)
-   
+    
     override init() {
         super.init()
         DispatchQueue.main.async {
             self.locationManager = CLLocationManager()
             self.locationManager!.delegate = self
-            if self.locationManager!.authorizationStatus == .notDetermined {
+            
+            let status = self.locationManager!.authorizationStatus
+            print("location status \(status)")
+            if status == .notDetermined {
                 self.locationManager!.requestWhenInUseAuthorization()
             }
         }
@@ -159,23 +178,53 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        let location = locations.last!
+        let location = locations.last!
 //        lastLati = location.coordinate.latitude
 //        lastLong = location.coordinate.longitude
 //        
 //        updateTime = Date()
-//        print("\(lastLati)" + " " + "\(lastLong)" ,updateTime )
+        print("didUpdateLocations \(locations)")
 //
 //        UserDefaults.standard.set(lastLati, forKey: "LastLocation.lati")
 //        UserDefaults.standard.set(lastLong, forKey: "LastLocation.long")
 //        UserDefaults.standard.set(updateTime, forKey: "LastLocationTime")
         manager.stopUpdatingLocation()
 
-        self.handler!(locations.last!)
+        
+        lastLocation = location.coordinate.string()
+        self.handler!(location)
     }
     
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        print("didUpdateLocations \(error)")
     }
+}
+
+extension CLLocationCoordinate2D{
+    
+    func string() -> String{
+        return "\(latitude),\(longitude)"
+    }
+  
+    init(string: String){
+        let array = string.components(separatedBy: CharacterSet(charactersIn: ","))
+        let latitude = Double(array[0]) ?? 0
+        let longitude = Double(array[1]) ?? 0
+        
+        self.init(latitude: latitude, longitude: longitude)
+    }
+    
+}
+extension Date{
+    
+    func since1970TimeIntervalString() -> String{
+        return "\(timeIntervalSince1970)"
+    }
+    
+    init(since1970: String){
+        let time = TimeInterval(Int(since1970) ?? 0)
+        self.init(timeIntervalSince1970: time)
+    }
+    
 }

@@ -8,23 +8,6 @@
 import WidgetKit
 import SwiftUI
 
-let terminalName = "void"
-let leftTopImageName = "LeftTopImage"
-
-let colorAlert1 = Color.yellow
-let colorAlert2 = Color.red
-let colorTemp1 = Color.white
-let colorTemp2 = Color.blue
-let colorCurr = Color.white
-let colorNext = Color.blue
-
-let colorKeep1 = Color.cyan
-let colorKeep2 = Color.brown
-let colorStep = Color.indigo
-let colorKcal = Color.red
-let colorHR = Color.orange
-
-
 @main
 struct WidgetForWatchOS: WidgetBundle {
     var body: some Widget {
@@ -93,7 +76,7 @@ struct CircularProvider: TimelineProvider {
 }
 
 struct WeatherProvider: TimelineProvider {
-    
+  
     var widgetLocationManager = WidgetLocationManager()
 
     func placeholder(in context: Context) -> WeatherEntry {
@@ -151,11 +134,10 @@ struct HealthProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        Task{
-
-            let health = await healthObserver.getHealthInfo()
+            
+        healthObserver.getHealthInfo { health in
             let entry = HealthEntry( health: health )
-       
+            
             let timeline = Timeline(entries: [entry], policy: .never)
             
             completion(timeline)
@@ -188,7 +170,6 @@ struct WeatherWidgetEntryView : View {
     var entry: WeatherProvider.Entry
     @Environment(\.widgetFamily) var family
     
-    let font = Font.system(size: 13)
 
     var body: some View {
         switch family {
@@ -196,47 +177,10 @@ struct WeatherWidgetEntryView : View {
             
             Text("Q")
              
-        case .accessoryRectangular:
-            VStack(alignment: .leading) {
-                HStack {
-                    MyText("user@\(terminalName):~ $ now")
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("[ALER.]")
-                    Image(systemName: "exclamationmark.triangle").frame(width: 16).imageScale(.small).foregroundStyle(colorAlert1).minimumScaleFactor(0.8)
-                    Text(entry.weather.alert).font(font).foregroundStyle(colorAlert1)
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("[TEMP]")
-                    let temp = entry.weather.current.temperature
-                    let temp2 = entry.weather.current.temperature
+        case .accessoryRectangular: 
+            
+            WeatherRectangularView(weather: entry.weather)
 
-                    HStack(spacing: 0){
-                        MyText(temp.value)
-                        MyText(temp.unit)
-                    }.foregroundColor(colorTemp1)
-                    MyText("→")
-                    HStack(spacing: 0){
-                        MyText(temp2.value)
-                        MyText(temp2.unit)
-                    }.foregroundColor(colorTemp2)
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("[CuRR]")
-                    Image(systemName: entry.weather.current.symbol).frame(width: 15).imageScale(.small)
-                    Text(entry.weather.current.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(colorCurr).minimumScaleFactor(0.8)
-                }.frame(height: 10)
-
-                HStack {
-                    MyText("[NEXT]")
-                    Image(systemName: entry.weather.after1Hours.symbol).frame(width: 15).imageScale(.small)
-                    Text(entry.weather.after1Hours.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(colorNext).minimumScaleFactor(0.8)
-                }.frame(height: 10)
-
-            }
         default:
             VStack{}
         }
@@ -254,58 +198,12 @@ struct HealthWidgetEntryView : View {
             Text("V")
                 
         case .accessoryRectangular:
-            VStack(alignment: .leading) {
-                HStack{
-                    MyText("[KEEP]")
-                    Image(systemName: "figure.run").imageScale(.small)
-                    MyText("\(entry.health.excerciseTime)").foregroundStyle(colorKeep1)
-                    Image(systemName: "figure.stand").imageScale(.small)
-                    MyText("\(entry.health.standHours)").foregroundStyle(colorKeep2)
-                    MyText("                               ")
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("[STEP]")
-                    Image(systemName: "figure.walk").imageScale(.small)
-                    MyText("\(entry.health.steps)").foregroundStyle(colorStep)
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("[KCAL]")
-                    Image(systemName: "flame").imageScale(.small)
-                    MyText("\(entry.health.excercise)").foregroundStyle(colorKcal)
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("[L_HR]")
-                    Image(systemName: "heart.circle").imageScale(.small)
-                    MyText("\(entry.health.heartRate)").foregroundStyle(colorHR)
-                }.frame(height: 10)
-                
-                HStack {
-                    MyText("user@\(terminalName):~ $ ")
-                }.frame(height: 10.5)
-            }
+
+            HealthRectangularView(health: entry.health)
+            
         default:
             VStack{}
         }
-    }
-}
-
-
-struct WeatherViewInfo {
-    let current: QWeather
-    let after1Hours: QWeather
-    let alert: String
-    
-    init(current: QWeather, after1Hours: QWeather, alert: String) {
-        self.current = current
-        self.after1Hours = after1Hours
-        self.alert = alert
-    }
-    
-    init(){
-        self.init(current: QWeather(), after1Hours: QWeather(), alert: "" )
     }
 }
 
@@ -332,19 +230,6 @@ struct HealthEntry: TimelineEntry {
     let health: HealthInfo
 }
 
-struct MyText: View {
-    let font = Font.system(size: 13)
-    let text: String
-    
-    init(_ text: String) {
-        self.text = text
-    }
-    
-    var body: some View{
-        Text(text).font(font).frame(alignment: .leading)
-    }
-
-}
 
 #Preview(as: .accessoryRectangular) {
     WeatherWidget()
