@@ -6,42 +6,20 @@
 //
 
 import SwiftUI
-//import HealthKit
+import HealthKit
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+    @StateObject var viewModel: QTermiViewModel
 
-    init() {
-//        healthStore.requestAuthorization(toShare: nil, read: hkDataTypesOfInterest) { result,error in
-//            print(result.description + " \n " + (error?.localizedDescription ?? ""))
-//            Task{
-//              let health = await HealthObserver().getHealthInfo()
-//                print(health.description())
-//            }
-//        }
-     
+    var body: some View {
+        VStack{
+            WeatherRectangularView(weather: viewModel.weather)
+            HealthRectangularView(health: viewModel.health)
+        }
     }
-    
-//    let healthStore = HKHealthStore()
-//    let hkDataTypesOfInterest = Set([
-//        HKObjectType.activitySummaryType(),
-//        HKCategoryType.categoryType(forIdentifier: .appleStandHour)!,
-//        HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-//        HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
-//        HKObjectType.quantityType(forIdentifier: .heartRate)!,
-//        HKObjectType.quantityType(forIdentifier: .stepCount)!,
-//    ])
 }
 
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: QTermiViewModel())
 }

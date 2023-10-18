@@ -124,7 +124,7 @@ struct HealthRectangularView : View {
             }.frame(height: 10)
             
             HStack {
-                MyText("user@\(terminalName):~ $ ")
+                MyText("user@\(terminalName):~ $ ").frame(maxWidth: .infinity, alignment: .leading)
             }.frame(height: 10.5)
         }
     }

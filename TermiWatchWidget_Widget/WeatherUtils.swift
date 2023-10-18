@@ -160,21 +160,21 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
     func fetchLocation(handler: @escaping (CLLocation) -> Void) {
         self.handler = handler
         
-//        print("\(lastLati)" + " " + "\(lastLong)" ,updateTime )
-//
-//        if( updateTime.timeIntervalSinceNow > -30){
-//
-//            let lati = UserDefaults.standard.object(forKey: "LastLocation.lati") as! CLLocationDegrees
-//            let long = UserDefaults.standard.object(forKey: "LastLocation.long") as! CLLocationDegrees
-//
-//            let location = CLLocation(latitude: lati, longitude: long)
-////            let location = CLLocation(latitude: 18.247872, longitude: 109.508268)
-//            handler(location)
-//        }else{
-            self.locationManager?.requestLocation()
-            print("requestLocation")
+        print("CL \(lastLocation) Time \(lastLocationTime)")
 
-//        }
+        let now:Double = Date().timeIntervalSince1970
+        let last:Double = Double(lastLocationTime) ?? 0
+
+        if( now - last < 3600*12){
+            
+            let location = CLLocation(string: lastLocation)
+
+            handler(location)
+            return
+        }
+
+        self.locationManager?.requestLocation()
+        print("requestLocation")
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -191,7 +191,9 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
         manager.stopUpdatingLocation()
 
         
-        lastLocation = location.coordinate.string()
+        lastLocation = location.string()
+        lastLocationTime = Date().since1970TimeIntervalString();
+        
         self.handler!(location)
     }
     
@@ -201,13 +203,13 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
     }
 }
 
-extension CLLocationCoordinate2D{
+extension CLLocation{
     
     func string() -> String{
-        return "\(latitude),\(longitude)"
+        return "\(self.coordinate.latitude),\(self.coordinate.longitude)"
     }
   
-    init(string: String){
+    convenience init(string: String){
         let array = string.components(separatedBy: CharacterSet(charactersIn: ","))
         let latitude = Double(array[0]) ?? 0
         let longitude = Double(array[1]) ?? 0
@@ -223,7 +225,7 @@ extension Date{
     }
     
     init(since1970: String){
-        let time = TimeInterval(Int(since1970) ?? 0)
+        let time = TimeInterval(Double(since1970) ?? 0)
         self.init(timeIntervalSince1970: time)
     }
     

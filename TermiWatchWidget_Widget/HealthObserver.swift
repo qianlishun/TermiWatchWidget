@@ -193,7 +193,8 @@ extension HealthObserver {
                     self.getStandHours { standHours in
                         self.getHeartRate { heartRate in
                             let health = HealthInfo(steps: steps, excercise: excercise, excerciseTime: excerciseTime, standHours: standHours, heartRate: heartRate)
-                                completion(health)
+                            print(health)
+                            completion(health)
                         }
                     }
                 }
