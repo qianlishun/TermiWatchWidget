@@ -1,4 +1,5 @@
 # Terminal Watch Widget
+[中文说明](https://github.com/qianlishun/TermiWatchWidget/wiki/中文说明)
 
 Terminal Watch Widget Face for Apple Watch.
 
