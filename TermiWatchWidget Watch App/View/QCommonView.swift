@@ -12,16 +12,15 @@ let leftTopImageName = "LeftTopImage"
 
 let colorAlert1 = Color.yellow
 let colorAlert2 = Color.red
-let colorTemp1 = Color.white
-let colorTemp2 = Color.blue
-let colorCurr = Color.white
-let colorNext = Color.blue
+let colorTemp = Color(r: 253, g: 143, b: 63)
+let colorHumi = Color.blue
+let colorCond = Color(r: 255, g: 215, b: 0)
 
 let colorKeep1 = Color.cyan
 let colorKeep2 = Color.brown
 let colorStep = Color.indigo
-let colorKcal = Color.red
-let colorHR = Color.orange
+let colorKcal = Color(r:238,g:98,b:48)
+let colorHR = Color(r:235,g:74,b:98)
 
 
 struct WeatherViewInfo {
@@ -50,42 +49,46 @@ struct WeatherRectangularView : View {
     var body: some View{
         VStack(alignment: .leading) {
             HStack {
-                MyText("user@\(terminalName):~ $ now")
+                MyText("user@\(terminalName):~ $ now").frame(maxWidth: .infinity, alignment: .leading)
             }.frame(height: 10)
-            
+            if(weather.alert.count>0){
+                HStack {
+                    MyText("[ALER.]")
+                    Image(systemName: "exclamationmark.triangle").frame(width: 16).imageScale(.small).foregroundStyle(colorAlert1).minimumScaleFactor(0.8)
+                    Text(weather.alert).font(font).foregroundStyle(colorAlert1)
+                }.frame(height: 10)
+            }
             HStack {
-                MyText("[ALER.]")
-                Image(systemName: "exclamationmark.triangle").frame(width: 16).imageScale(.small).foregroundStyle(colorAlert1).minimumScaleFactor(0.8)
-                Text(weather.alert).font(font).foregroundStyle(colorAlert1)
+                MyText("[CuRR]")
+                Image(systemName: weather.current.symbol).frame(width: 15).imageScale(.small).foregroundStyle(colorCond)
+                Text(weather.current.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundStyle(colorCond).minimumScaleFactor(0.8)
             }.frame(height: 10)
             
             HStack {
                 MyText("[TEMP]")
+                Image(systemName: "thermometer.transmission").frame(width: 15).imageScale(.small).foregroundStyle(colorTemp)
                 let temp = weather.current.temperature
-                let temp2 = weather.current.temperature
-                
                 HStack(spacing: 0){
                     MyText(temp.value)
                     MyText(temp.unit)
-                }.foregroundColor(colorTemp1)
-                MyText("→")
-                HStack(spacing: 0){
-                    MyText(temp2.value)
-                    MyText(temp2.unit)
-                }.foregroundColor(colorTemp2)
+                }.foregroundStyle(colorTemp)
+            }.frame(height: 10)
+                        
+            HStack {
+                MyText("[HUMI]")
+                Image(systemName: "humidity").frame(width: 15).imageScale(.small).foregroundStyle(colorHumi)
+                Text(weather.current.humidity).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundStyle(colorHumi).minimumScaleFactor(0.8)
             }.frame(height: 10)
             
-            HStack {
-                MyText("[CuRR]")
-                Image(systemName: weather.current.symbol).frame(width: 15).imageScale(.small)
-                Text(weather.current.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(colorCurr).minimumScaleFactor(0.8)
-            }.frame(height: 10)
-            
-            HStack {
-                MyText("[NEXT]")
-                Image(systemName: weather.after1Hours.symbol).frame(width: 15).imageScale(.small)
-                Text(weather.after1Hours.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundColor(colorNext).minimumScaleFactor(0.8)
-            }.frame(height: 10)
+            if(weather.alert.count==0){
+                HStack {
+                    MyText("[NEXT]")
+                    Image(systemName: weather.after1Hours.symbol).frame(width: 15).imageScale(.small).foregroundStyle(colorCond)
+                    Text(weather.after1Hours.condition).font(font).frame(alignment: .leading).foregroundStyle(colorCond).minimumScaleFactor(0.8)
+                    Text("\(weather.after1Hours.temperature.value)\(weather.after1Hours.temperature.unit)").font(font).foregroundStyle(colorTemp)
+                    Text(weather.after1Hours.humidity).font(font).foregroundStyle(colorHumi)
+                }.frame(height: 10)
+            }
         }
     }
 }
@@ -98,28 +101,28 @@ struct HealthRectangularView : View {
         VStack(alignment: .leading) {
             HStack{
                 MyText("[KEEP]")
-                Image(systemName: "figure.run").imageScale(.small)
+                Image(systemName: "figure.run").imageScale(.small).foregroundStyle(colorKeep1)
                 MyText("\(health.excerciseTime)").foregroundStyle(colorKeep1)
-                Image(systemName: "figure.stand").imageScale(.small)
+                Image(systemName: "figure.stand").imageScale(.small).foregroundStyle(colorKeep2)
                 MyText("\(health.standHours)").foregroundStyle(colorKeep2)
                 MyText("                               ")
             }.frame(height: 10)
             
             HStack {
                 MyText("[STEP]")
-                Image(systemName: "figure.walk").imageScale(.small)
+                Image(systemName: "figure.walk").imageScale(.small).foregroundStyle(colorStep)
                 MyText("\(health.steps)").foregroundStyle(colorStep)
             }.frame(height: 10)
             
             HStack {
                 MyText("[KCAL]")
-                Image(systemName: "flame").imageScale(.small)
+                Image(systemName: "flame").imageScale(.small).foregroundStyle(colorKcal)
                 MyText("\(health.excercise)").foregroundStyle(colorKcal)
             }.frame(height: 10)
             
             HStack {
                 MyText("[L_HR]")
-                Image(systemName: "heart.circle").imageScale(.small)
+                Image(systemName: "heart.circle").imageScale(.small).foregroundStyle(colorHR)
                 MyText("\(health.heartRate)").foregroundStyle(colorHR)
             }.frame(height: 10)
             
@@ -144,4 +147,13 @@ struct MyText: View {
         Text(text).font(font).frame(alignment: .leading)
     }
 
+}
+
+extension Color{
+    init(r: Double, g: Double, b: Double){
+        self.init(red: r/255.0, green: g/255.0, blue: b/255.0)
+    }
+    init(r: Double, g: Double, b: Double, a: Double){
+        self.init(red: r/255.0, green: g/255.0, blue: b/255.0, opacity: a)
+    }
 }

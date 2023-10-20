@@ -11,7 +11,7 @@ import WidgetKit
 @main
 struct TermiWatchWidgetApp: App {
     @Environment(\.scenePhase) private var scenePhase
-    @StateObject var viewModel = QTermiViewModel()
+    @State var viewModel = QTermiViewModel()
 
     
     var body: some Scene {

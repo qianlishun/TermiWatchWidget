@@ -52,15 +52,17 @@ struct QWeather{
     let condition: String
     let symbol: String
     let temperature: QTemperature
+    let humidity: String
     
-    init(date: Date, condition: String, symbol: String, temperature: String) {
+    init(date: Date, condition: String, symbol: String, temperature: String, humidity: String) {
         self.date = date
         self.condition = condition
         self.symbol = symbol
         self.temperature = QTemperature(temperature)
+        self.humidity = humidity
     }
     init() {
-        self.init(date: Date() , condition: "", symbol: "", temperature: "")
+        self.init(date: Date() , condition: "", symbol: "", temperature: "",humidity: "")
     }
     
     init(currentWeather: CurrentWeather, tempMF: MeasurementFormatter){
@@ -68,14 +70,16 @@ struct QWeather{
         let symbol = currentWeather.symbolName
         let temperature = currentWeather.temperature
         let temp = tempMF.string(from: temperature)
-        self.init(date: currentWeather.date, condition: condition.description, symbol: symbol, temperature: temp)
+        let humidity = String("\(Int(currentWeather.humidity*100))%")
+        self.init(date: currentWeather.date, condition: condition.description, symbol: symbol, temperature: temp, humidity: humidity)
     }
     init(hourWeather: HourWeather, tempMF: MeasurementFormatter){
         let condition = hourWeather.condition
         let symbol = hourWeather.symbolName
         let temperature = hourWeather.temperature
         let temp = tempMF.string(from: temperature)
-        self.init(date: hourWeather.date, condition: condition.accessibilityDescription, symbol: symbol, temperature: temp)
+        let humidity = String("\(Int(hourWeather.humidity*100))%")
+        self.init(date: hourWeather.date, condition: condition.accessibilityDescription, symbol: symbol, temperature: temp, humidity: humidity)
     }
 }
 
@@ -166,9 +170,8 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
         let last:Double = Double(lastLocationTime) ?? 0
 
         if( now - last < 3600*12){
-            
+            print("use cache Location")
             let location = CLLocation(string: lastLocation)
-
             handler(location)
             return
         }

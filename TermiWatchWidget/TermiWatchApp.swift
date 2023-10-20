@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct TermiWatch: App {
     @Environment(\.scenePhase) private var scenePhase
-    @StateObject var viewModel = QTermiViewModel()
+    @State var viewModel = QTermiViewModel()
 
     
     let locationMgr = WidgetLocationManager()

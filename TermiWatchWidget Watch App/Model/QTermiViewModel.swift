@@ -7,9 +7,10 @@
 
 import Foundation
 
-final class QTermiViewModel: ObservableObject {
-    @Published var health = HealthInfo()
-    @Published var weather = WeatherViewInfo()
+@Observable
+class QTermiViewModel {
+    var health = HealthInfo()
+    var weather = WeatherViewInfo()
     
     let healthObserver = HealthObserver()
     let widgetLocationManager = WidgetLocationManager()

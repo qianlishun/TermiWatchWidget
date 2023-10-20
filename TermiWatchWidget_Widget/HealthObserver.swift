@@ -207,41 +207,40 @@ extension HealthObserver {
         let type: HKQuantityType = HKQuantityType(HKQuantityTypeIdentifier.stepCount)
         
         subscribeToStatisticsForToday(forQuantityType: type, unit: HKUnit.count(), options: .cumulativeSum, completion: completion)
-        
     }
     
-    func getActiveEnergyBurned(compltion: @escaping(Int) -> ()){
+    func getActiveEnergyBurned(completion: @escaping(Int) -> ()){
         subscribeToActivitySummary(sampleType: HKQuantityType(HKQuantityTypeIdentifier.activeEnergyBurned)) { summary in
             
             let excerciseValue = summary.activeEnergyBurned.doubleValue(
               for: HKUnit.kilocalorie()
             )
-            compltion(Int(excerciseValue))
+            completion(Int(excerciseValue))
         }
     }
     
-    func getExerciseTime(compltion: @escaping(Int) -> ()){
+    func getExerciseTime(completion: @escaping(Int) -> ()){
         subscribeToActivitySummary(sampleType: HKQuantityType(HKQuantityTypeIdentifier.appleExerciseTime)) { summary in
             
             let time = summary.appleExerciseTime.doubleValue(
               for: HKUnit.minute()
             )
-            compltion(Int(time))
+            completion(Int(time))
         }
     }
     
-    func getStandHours(compltion: @escaping(Int) -> ()){
+    func getStandHours(completion: @escaping(Int) -> ()){
         subscribeToActivitySummary(sampleType:HKCategoryType(.appleStandHour)) { summary in
             
             let stamd = summary.appleStandHours.doubleValue(
               for: HKUnit.count()
             )
-            compltion(Int(stamd))
+            completion(Int(stamd))
         }
     }
 
-    func getHeartRate(compltion: @escaping(Int) -> ()){
-        fetchSample(quantityType: HKQuantityType(.heartRate), unit: HKUnit(from: "count/min"), completion: compltion)
+    func getHeartRate(completion: @escaping(Int) -> ()){
+        fetchSample(quantityType: HKQuantityType(.heartRate), unit: HKUnit(from: "count/min"), completion: completion)
     }
 
 }

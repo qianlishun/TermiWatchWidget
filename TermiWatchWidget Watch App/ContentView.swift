@@ -9,7 +9,7 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
-    @StateObject var viewModel: QTermiViewModel
+    let viewModel: QTermiViewModel
 
     var body: some View {
         VStack{
