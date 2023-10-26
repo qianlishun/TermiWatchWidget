@@ -96,22 +96,41 @@ struct WeatherProvider: TimelineProvider {
         widgetLocationManager.fetchLocation(handler: { location in
             Task{
                 var currentDate = Date()
-                let oneHour: TimeInterval = 30*60
+                let oneHour: TimeInterval = 60*60
 
-                let weather = try await getWeather(location: location, afterHours: 3)
-                
-                var entries = [WeatherEntry]()
-                for i in 0..<2{
-                    let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
+                if(HFWeatherKey.count == 0){
+                    let weather = try await getWeather(location: location, afterHours: 3)
                     
-                    let entry = WeatherEntry(date: currentDate, weather: info)
-                    entries.append(entry)
-                    currentDate += oneHour
+                    var entries = [WeatherEntry]()
+                    for i in 0..<2{
+                        let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
+                        
+                        let entry = WeatherEntry(date: currentDate, weather: info)
+                        entries.append(entry)
+                        currentDate += oneHour
+                    }
+                    
+                    let timeline = Timeline(entries: entries, policy: .atEnd)
+                    
+                    completion(timeline)
+                }else{
+                    
+                    getHFWeather(location: location) { weather in
+                        var entries = [WeatherEntry]()
+                        for i in 0..<6{
+                            let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
+                            
+                            let entry = WeatherEntry(date: currentDate, weather: info)
+                            entries.append(entry)
+                            currentDate += oneHour
+                        }
+                        
+                        let timeline = Timeline(entries: entries, policy: .atEnd)
+                        
+                        completion(timeline)
+                    }
+                    
                 }
-
-                let timeline = Timeline(entries: entries, policy: .atEnd)
-                
-                completion(timeline)
             }
             WidgetCenter.shared.reloadTimelines(ofKind: "HealthWidget")
 

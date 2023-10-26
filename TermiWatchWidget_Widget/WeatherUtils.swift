@@ -10,6 +10,8 @@ import WeatherKit
 import CoreLocation
 import SwiftUI
 
+
+
 struct WeatherInfo {
     let current: QWeather
     let weathers: [QWeather] // 0为当前
@@ -23,6 +25,13 @@ struct WeatherInfo {
     
     init(){
         self.init(current: QWeather(), weathers: [QWeather()], alerts: [String()] )
+    }
+    
+    init(current: HFWeatherNow, weathers: [HFWeather24h]){
+        let weathers2 = weathers.map({ hf in
+            QWeather(hfWeather: hf)
+        })
+        self.init(current: QWeather(hfWeather: current), weathers: weathers2, alerts: [String()])
     }
 }
 struct QTemperature{
@@ -81,6 +90,12 @@ struct QWeather{
         let humidity = String("\(Int(hourWeather.humidity*100))%")
         self.init(date: hourWeather.date, condition: condition.accessibilityDescription, symbol: symbol, temperature: temp, humidity: humidity)
     }
+    init(hfWeather: HFWeatherNow){
+        self.init(date: hfWeather.obsTime, condition: hfWeather.text, symbol: hfWeather.icon, temperature: hfWeather.temp+"℃", humidity: hfWeather.humidity+"%")
+    }
+    init(hfWeather: HFWeather24h){
+        self.init(date: hfWeather.fxTime, condition: hfWeather.text, symbol: hfWeather.icon, temperature: hfWeather.temp+"℃", humidity: hfWeather.humidity+"%")
+    }
 }
 
 //, completion: @escaping(String) -> ()
@@ -124,6 +139,138 @@ func getWeather(location: CLLocation, afterHours: Int) async throws -> WeatherIn
     return result
 }
 
+func HFWeatherNowAPI(
+    location: CLLocation,
+    apiKey: String = HFWeatherKey
+) -> URL {
+  return URL(
+    string: "https://devapi.qweather.com/v7/weather/now?"
+        + "location=\(location.coordinate.longitude),\(location.coordinate.latitude)"
+        + "&key=\(apiKey)"
+  )!
+}
+func HFWeather24hAPI(
+    location: CLLocation,
+    apiKey: String = HFWeatherKey
+) -> URL {
+  return URL(
+    string: "https://devapi.qweather.com/v7/weather/24h?"
+        + "location=\(location.coordinate.longitude),\(location.coordinate.latitude)"
+        + "&key=\(apiKey)"
+  )!
+}
+
+struct HFWeatherNow : Codable {
+    let obsTime: Date
+    let text: String
+    let icon: String
+    let temp: String
+    let humidity: String
+   
+    init(obsTime: Date, text: String, icon: String, temp: String, humidity: String) {
+        self.obsTime = obsTime
+        self.text = text
+        self.icon = icon
+        self.temp = temp
+        self.humidity = humidity
+    }
+    init(){
+        self.init(obsTime: Date(), text: "", icon: "", temp: "", humidity: "")
+    }
+}
+
+struct HFWeather24h : Codable {
+    let fxTime: Date
+    let text: String
+    let icon: String
+    let temp: String
+    let humidity: String
+   
+    init(fxTime: Date, text: String, icon: String, temp: String, humidity: String) {
+        self.fxTime = fxTime
+        self.text = text
+        self.icon = icon
+        self.temp = temp
+        self.humidity = humidity
+    }
+    init(){
+        self.init(fxTime:Date(),  text: "", icon: "", temp: "", humidity: "")
+    }
+}
+
+
+struct HFWeatherNowResponse: Codable {
+    let code: String
+    let now: HFWeatherNow
+    
+}
+struct HFWeather24hResponse: Codable {
+    let code: String
+    let hourly: [HFWeather24h]
+    
+}
+func getHFWeather(location: CLLocation, handler: (@escaping (WeatherInfo) -> Void) ) {
+    
+    let sessionConfig = URLSessionConfiguration.default
+    sessionConfig.requestCachePolicy = .reloadIgnoringLocalCacheData
+    sessionConfig.urlCache = nil
+    
+    var request = URLRequest(url: HFWeatherNowAPI(location: location))
+    request.httpMethod = "GET"
+    request.setValue("UTF-8", forHTTPHeaderField:"Charset")
+    request.setValue("application/json", forHTTPHeaderField:"Content-Type")
+    
+    var request2 = URLRequest(url: HFWeather24hAPI(location: location))
+    request2.httpMethod = "GET"
+    request2.setValue("UTF-8", forHTTPHeaderField:"Charset")
+    request2.setValue("application/json", forHTTPHeaderField:"Content-Type")
+    
+    let decoder = JSONDecoder()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mmZ"
+    decoder.dateDecodingStrategy = .formatted(formatter)
+    
+    URLSession(configuration: sessionConfig).dataTask(with: request) { data, response, error in
+        do {
+            
+            let result = try decoder.decode(HFWeatherNowResponse.self, from: data!)
+            if(result.code == "200"){
+                
+                URLSession(configuration: sessionConfig).dataTask(with: request2) { data, response, error in
+                    do {
+                        
+                        let result2 = try decoder.decode(HFWeather24hResponse.self, from: data!)
+                        if(result2.code == "200"){
+                            
+                            let hf = WeatherInfo(current: result.now, weathers: result2.hourly)
+                            handler(hf)
+                            
+                        }else{
+                            print("HF error \(result2.code)")
+                            
+            //                handler(HFWeather())
+                        }
+                        
+                    } catch {
+                        print("无法连接到服务器 \(error)")
+            //            handler(HFWeather())
+                    }
+                }.resume()
+
+                
+            }else{
+                print("HF error \(result.code)")
+                
+//                handler(HFWeather())
+            }
+            
+        } catch {
+            print("无法连接到服务器 \(error)")
+//            handler(HFWeather())
+        }
+    }.resume()
+    
+}
 
 class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
     @AppStorage("LastLocation", store: UserDefaults(suiteName: "group.com.void.termiWatch"))

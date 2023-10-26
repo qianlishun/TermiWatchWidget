@@ -23,8 +23,9 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
   Refer to TermiWatch's tutorial
   - *TermiWatcht* https://github.com/kuglee/TermiWatch/blob/master/README.md
 
-  1. For each of the 3 **targets** replece *void* in the **Bundle Identifier** field with the name of your developer account. (The name of your Apple ID without the *@xxxx.com*.)
-  ![Xcode Setting1](Screenshots/Xcode_Settings1.png)      
+  1. For each of the 3 **targets** replece *void* in the **Bundle Identifier** field with the name of your developer account. (The name of your Apple ID without the *@xxxx.com*.)  
+  <img src="Screenshots/Xcode_Settings1.png" width="60%" height="auto" />
+      
   1. Change the project's team:
       1. Select the **Signing & Capabilities** tab:    
       1. For each of the 3 **targets** change the **Team** to your team. (Usually this is your name.)  
@@ -33,9 +34,14 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
         1. In the **Text** field type *void* (Maybe others like *xxx* in com.xxx.TermiWatch)
         1. In the **With** field type the name of your developer account. (The name of your Apple ID without the @xxxx.com.)
         1. Click the **Replace All** button.
-  1. If there is an error in WeatherKit or HealthKit, please set Capability
-  .![Xcode Setting2](Screenshots/Xcode_Settings2.png)
-
+  1. If there is an error in WeatherKit or HealthKit, please set Capability. If you do not use WeatherKit, you do not need to set up WeatherKit.  
+  <img src="Screenshots/Xcode_Settings2.png" width="60%" height="auto" />  
+  1. Added '和风天气' module, If using '和风天气' to replace weatherkit https://dev.qweather.com/en/docs/
+      1. Go to https://id.qweather.com/#/login to apply for the API Key for qweather  
+      1. Refer doc https://dev.qweather.com/en/docs/configuration/project-and-key/
+      1. Copy **Key** to **HFWeatherKey**  (/TermiWatchWidget Watch App/View/QCommonView.swift)
+      1. Please delete the weatherkit  
+      <img src="Screenshots/Xcode_Settings3.png" width="60%" height="auto" />
 
 ## Installing the app
   1. Plug your phone into your computer.
@@ -54,3 +60,7 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
   4. Find TerminalWatchWidget, And set Top Left(Circular), Middle(Weather), Bottom(Health)  
     <img src="Screenshots/Watch_Setting3.png" width="40%" height="auto" />
 
+## Custom UI
+  1. Find /TermiWatchWidget Watch App/View/QCommonView.swift
+  2. Modify text, color. 
+  3. Image path on TermiWatchWidget/TermiWatchWidget_Widget/Assets.xcassets/LeftTopImage.imageset, you can replace it

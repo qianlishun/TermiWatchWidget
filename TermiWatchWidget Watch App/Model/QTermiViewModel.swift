@@ -19,9 +19,15 @@ class QTermiViewModel {
         
         widgetLocationManager.fetchLocation(handler: { location in
             Task{
-                let weather = try await getWeather(location: location, afterHours: 2)
-                DispatchQueue.main.async {
-                    self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0])
+                if(HFWeatherKey.count==0){
+                    let weather = try await getWeather(location: location, afterHours: 2)
+                    DispatchQueue.main.async {
+                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0])
+                    }
+                }else{
+                    getHFWeather(location: location) { weather in
+                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0])
+                    }
                 }
             }
         })

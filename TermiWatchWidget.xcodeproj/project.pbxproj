@@ -17,6 +17,171 @@
 		6E43A5112ADD1E8F00B90ED9 /* QCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43A4FE2ADCE96A00B90ED9 /* QCommonView.swift */; };
 		6E43A5122ADD1EAD00B90ED9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD6082AD5546A003E0C77 /* ContentView.swift */; };
 		6E43A5142ADD2EA400B90ED9 /* QTermiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43A50A2ADCF81C00B90ED9 /* QTermiViewModel.swift */; };
+		6E6935362AE92A0A006085E1 /* HFBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E6935352AE92A0A006085E1 /* HFBundle.bundle */; };
+		6E6935372AE92A0A006085E1 /* HFBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E6935352AE92A0A006085E1 /* HFBundle.bundle */; };
+		6E6935382AE92A0A006085E1 /* HFBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E6935352AE92A0A006085E1 /* HFBundle.bundle */; };
+		6E69364F2AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360A2AE93E44006085E1 /* MBezierPath+Extension_macOS.swift */; };
+		6E6936502AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360A2AE93E44006085E1 /* MBezierPath+Extension_macOS.swift */; };
+		6E6936512AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360A2AE93E44006085E1 /* MBezierPath+Extension_macOS.swift */; };
+		6E6936522AE93E45006085E1 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360B2AE93E44006085E1 /* UIExtensions.swift */; };
+		6E6936532AE93E45006085E1 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360B2AE93E44006085E1 /* UIExtensions.swift */; };
+		6E6936542AE93E45006085E1 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360B2AE93E44006085E1 /* UIExtensions.swift */; };
+		6E6936552AE93E45006085E1 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360D2AE93E44006085E1 /* Serializable.swift */; };
+		6E6936562AE93E45006085E1 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360D2AE93E44006085E1 /* Serializable.swift */; };
+		6E6936572AE93E45006085E1 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360D2AE93E44006085E1 /* Serializable.swift */; };
+		6E6936582AE93E45006085E1 /* Serializations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360E2AE93E44006085E1 /* Serializations.swift */; };
+		6E6936592AE93E45006085E1 /* Serializations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360E2AE93E44006085E1 /* Serializations.swift */; };
+		6E69365A2AE93E45006085E1 /* Serializations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360E2AE93E44006085E1 /* Serializations.swift */; };
+		6E69365B2AE93E45006085E1 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360F2AE93E44006085E1 /* Serializer.swift */; };
+		6E69365C2AE93E45006085E1 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360F2AE93E44006085E1 /* Serializer.swift */; };
+		6E69365D2AE93E45006085E1 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69360F2AE93E44006085E1 /* Serializer.swift */; };
+		6E69365E2AE93E45006085E1 /* SVGLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936132AE93E44006085E1 /* SVGLinker.swift */; };
+		6E69365F2AE93E45006085E1 /* SVGLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936132AE93E44006085E1 /* SVGLinker.swift */; };
+		6E6936602AE93E45006085E1 /* SVGLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936132AE93E44006085E1 /* SVGLinker.swift */; };
+		6E6936612AE93E45006085E1 /* SVGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936142AE93E44006085E1 /* SVGLogger.swift */; };
+		6E6936622AE93E45006085E1 /* SVGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936142AE93E44006085E1 /* SVGLogger.swift */; };
+		6E6936632AE93E45006085E1 /* SVGLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936142AE93E44006085E1 /* SVGLogger.swift */; };
+		6E6936642AE93E45006085E1 /* SVGScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936152AE93E44006085E1 /* SVGScreen.swift */; };
+		6E6936652AE93E45006085E1 /* SVGScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936152AE93E44006085E1 /* SVGScreen.swift */; };
+		6E6936662AE93E45006085E1 /* SVGScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936152AE93E44006085E1 /* SVGScreen.swift */; };
+		6E6936672AE93E45006085E1 /* SVGSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936162AE93E44006085E1 /* SVGSettings.swift */; };
+		6E6936682AE93E45006085E1 /* SVGSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936162AE93E44006085E1 /* SVGSettings.swift */; };
+		6E6936692AE93E45006085E1 /* SVGSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936162AE93E44006085E1 /* SVGSettings.swift */; };
+		6E69366A2AE93E45006085E1 /* SVGParserExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936172AE93E44006085E1 /* SVGParserExtensions.swift */; };
+		6E69366B2AE93E45006085E1 /* SVGParserExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936172AE93E44006085E1 /* SVGParserExtensions.swift */; };
+		6E69366C2AE93E45006085E1 /* SVGParserExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936172AE93E44006085E1 /* SVGParserExtensions.swift */; };
+		6E69366D2AE93E45006085E1 /* SVGContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936182AE93E44006085E1 /* SVGContext.swift */; };
+		6E69366E2AE93E45006085E1 /* SVGContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936182AE93E44006085E1 /* SVGContext.swift */; };
+		6E69366F2AE93E45006085E1 /* SVGContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936182AE93E44006085E1 /* SVGContext.swift */; };
+		6E6936702AE93E45006085E1 /* SVGPathReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936192AE93E44006085E1 /* SVGPathReader.swift */; };
+		6E6936712AE93E45006085E1 /* SVGPathReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936192AE93E44006085E1 /* SVGPathReader.swift */; };
+		6E6936722AE93E45006085E1 /* SVGPathReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936192AE93E44006085E1 /* SVGPathReader.swift */; };
+		6E6936732AE93E45006085E1 /* SVGLengthParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361B2AE93E44006085E1 /* SVGLengthParser.swift */; };
+		6E6936742AE93E45006085E1 /* SVGLengthParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361B2AE93E44006085E1 /* SVGLengthParser.swift */; };
+		6E6936752AE93E45006085E1 /* SVGLengthParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361B2AE93E44006085E1 /* SVGLengthParser.swift */; };
+		6E6936762AE93E45006085E1 /* SVGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361C2AE93E44006085E1 /* SVGConstants.swift */; };
+		6E6936772AE93E45006085E1 /* SVGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361C2AE93E44006085E1 /* SVGConstants.swift */; };
+		6E6936782AE93E45006085E1 /* SVGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361C2AE93E44006085E1 /* SVGConstants.swift */; };
+		6E6936792AE93E45006085E1 /* SVGAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361E2AE93E44006085E1 /* SVGAttribute.swift */; };
+		6E69367A2AE93E45006085E1 /* SVGAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361E2AE93E44006085E1 /* SVGAttribute.swift */; };
+		6E69367B2AE93E45006085E1 /* SVGAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361E2AE93E44006085E1 /* SVGAttribute.swift */; };
+		6E69367C2AE93E45006085E1 /* SVGLengthAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361F2AE93E44006085E1 /* SVGLengthAttribute.swift */; };
+		6E69367D2AE93E45006085E1 /* SVGLengthAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361F2AE93E44006085E1 /* SVGLengthAttribute.swift */; };
+		6E69367E2AE93E45006085E1 /* SVGLengthAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69361F2AE93E44006085E1 /* SVGLengthAttribute.swift */; };
+		6E69367F2AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936202AE93E44006085E1 /* SVGFontSizeAttribute.swift */; };
+		6E6936802AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936202AE93E44006085E1 /* SVGFontSizeAttribute.swift */; };
+		6E6936812AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936202AE93E44006085E1 /* SVGFontSizeAttribute.swift */; };
+		6E6936822AE93E45006085E1 /* SVGShapeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936222AE93E44006085E1 /* SVGShapeParser.swift */; };
+		6E6936832AE93E45006085E1 /* SVGShapeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936222AE93E44006085E1 /* SVGShapeParser.swift */; };
+		6E6936842AE93E45006085E1 /* SVGShapeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936222AE93E44006085E1 /* SVGShapeParser.swift */; };
+		6E6936852AE93E45006085E1 /* SVGImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936232AE93E44006085E1 /* SVGImageParser.swift */; };
+		6E6936862AE93E45006085E1 /* SVGImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936232AE93E44006085E1 /* SVGImageParser.swift */; };
+		6E6936872AE93E45006085E1 /* SVGImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936232AE93E44006085E1 /* SVGImageParser.swift */; };
+		6E6936882AE93E45006085E1 /* SVGElementParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936242AE93E44006085E1 /* SVGElementParser.swift */; };
+		6E6936892AE93E45006085E1 /* SVGElementParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936242AE93E44006085E1 /* SVGElementParser.swift */; };
+		6E69368A2AE93E45006085E1 /* SVGElementParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936242AE93E44006085E1 /* SVGElementParser.swift */; };
+		6E69368B2AE93E45006085E1 /* SVGTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936252AE93E44006085E1 /* SVGTextParser.swift */; };
+		6E69368C2AE93E45006085E1 /* SVGTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936252AE93E44006085E1 /* SVGTextParser.swift */; };
+		6E69368D2AE93E45006085E1 /* SVGTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936252AE93E44006085E1 /* SVGTextParser.swift */; };
+		6E69368E2AE93E45006085E1 /* SVGStructureParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936262AE93E44006085E1 /* SVGStructureParsers.swift */; };
+		6E69368F2AE93E45006085E1 /* SVGStructureParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936262AE93E44006085E1 /* SVGStructureParsers.swift */; };
+		6E6936902AE93E45006085E1 /* SVGStructureParsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936262AE93E44006085E1 /* SVGStructureParsers.swift */; };
+		6E6936912AE93E45006085E1 /* SVGParserBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936272AE93E44006085E1 /* SVGParserBasics.swift */; };
+		6E6936922AE93E45006085E1 /* SVGParserBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936272AE93E44006085E1 /* SVGParserBasics.swift */; };
+		6E6936932AE93E45006085E1 /* SVGParserBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936272AE93E44006085E1 /* SVGParserBasics.swift */; };
+		6E6936942AE93E45006085E1 /* SVGParserPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936282AE93E44006085E1 /* SVGParserPrimitives.swift */; };
+		6E6936952AE93E45006085E1 /* SVGParserPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936282AE93E44006085E1 /* SVGParserPrimitives.swift */; };
+		6E6936962AE93E45006085E1 /* SVGParserPrimitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936282AE93E44006085E1 /* SVGParserPrimitives.swift */; };
+		6E6936972AE93E45006085E1 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936292AE93E44006085E1 /* SVGView.swift */; };
+		6E6936982AE93E45006085E1 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936292AE93E44006085E1 /* SVGView.swift */; };
+		6E6936992AE93E45006085E1 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936292AE93E44006085E1 /* SVGView.swift */; };
+		6E69369A2AE93E45006085E1 /* SVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362A2AE93E44006085E1 /* SVGParser.swift */; };
+		6E69369B2AE93E45006085E1 /* SVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362A2AE93E44006085E1 /* SVGParser.swift */; };
+		6E69369C2AE93E45006085E1 /* SVGParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362A2AE93E44006085E1 /* SVGParser.swift */; };
+		6E69369D2AE93E45006085E1 /* SVGIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362B2AE93E44006085E1 /* SVGIndex.swift */; };
+		6E69369E2AE93E45006085E1 /* SVGIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362B2AE93E44006085E1 /* SVGIndex.swift */; };
+		6E69369F2AE93E45006085E1 /* SVGIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362B2AE93E44006085E1 /* SVGIndex.swift */; };
+		6E6936A02AE93E45006085E1 /* CSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362D2AE93E44006085E1 /* CSSParser.swift */; };
+		6E6936A12AE93E45006085E1 /* CSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362D2AE93E44006085E1 /* CSSParser.swift */; };
+		6E6936A22AE93E45006085E1 /* CSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362D2AE93E44006085E1 /* CSSParser.swift */; };
+		6E6936A32AE93E45006085E1 /* DOMParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362F2AE93E44006085E1 /* DOMParser.swift */; };
+		6E6936A42AE93E45006085E1 /* DOMParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362F2AE93E44006085E1 /* DOMParser.swift */; };
+		6E6936A52AE93E45006085E1 /* DOMParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69362F2AE93E44006085E1 /* DOMParser.swift */; };
+		6E6936A62AE93E45006085E1 /* XMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936302AE93E44006085E1 /* XMLNode.swift */; };
+		6E6936A72AE93E45006085E1 /* XMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936302AE93E44006085E1 /* XMLNode.swift */; };
+		6E6936A82AE93E45006085E1 /* XMLNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936302AE93E44006085E1 /* XMLNode.swift */; };
+		6E6936A92AE93E45006085E1 /* SVGText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936332AE93E44006085E1 /* SVGText.swift */; };
+		6E6936AA2AE93E45006085E1 /* SVGText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936332AE93E44006085E1 /* SVGText.swift */; };
+		6E6936AB2AE93E45006085E1 /* SVGText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936332AE93E44006085E1 /* SVGText.swift */; };
+		6E6936AC2AE93E45006085E1 /* SVGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936342AE93E44006085E1 /* SVGNode.swift */; };
+		6E6936AD2AE93E45006085E1 /* SVGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936342AE93E44006085E1 /* SVGNode.swift */; };
+		6E6936AE2AE93E45006085E1 /* SVGNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936342AE93E44006085E1 /* SVGNode.swift */; };
+		6E6936AF2AE93E45006085E1 /* SVGViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936352AE93E44006085E1 /* SVGViewport.swift */; };
+		6E6936B02AE93E45006085E1 /* SVGViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936352AE93E44006085E1 /* SVGViewport.swift */; };
+		6E6936B12AE93E45006085E1 /* SVGViewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936352AE93E44006085E1 /* SVGViewport.swift */; };
+		6E6936B22AE93E45006085E1 /* SVGShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936362AE93E44006085E1 /* SVGShape.swift */; };
+		6E6936B32AE93E45006085E1 /* SVGShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936362AE93E44006085E1 /* SVGShape.swift */; };
+		6E6936B42AE93E45006085E1 /* SVGShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936362AE93E44006085E1 /* SVGShape.swift */; };
+		6E6936B52AE93E45006085E1 /* SVGGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936372AE93E44006085E1 /* SVGGroup.swift */; };
+		6E6936B62AE93E45006085E1 /* SVGGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936372AE93E44006085E1 /* SVGGroup.swift */; };
+		6E6936B72AE93E45006085E1 /* SVGGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936372AE93E44006085E1 /* SVGGroup.swift */; };
+		6E6936B82AE93E45006085E1 /* SVGUserSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936382AE93E44006085E1 /* SVGUserSpaceNode.swift */; };
+		6E6936B92AE93E45006085E1 /* SVGUserSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936382AE93E44006085E1 /* SVGUserSpaceNode.swift */; };
+		6E6936BA2AE93E45006085E1 /* SVGUserSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936382AE93E44006085E1 /* SVGUserSpaceNode.swift */; };
+		6E6936BB2AE93E45006085E1 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936392AE93E44006085E1 /* SVGImage.swift */; };
+		6E6936BC2AE93E45006085E1 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936392AE93E44006085E1 /* SVGImage.swift */; };
+		6E6936BD2AE93E45006085E1 /* SVGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936392AE93E44006085E1 /* SVGImage.swift */; };
+		6E6936BE2AE93E45006085E1 /* SVGURLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363B2AE93E44006085E1 /* SVGURLImage.swift */; };
+		6E6936BF2AE93E45006085E1 /* SVGURLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363B2AE93E44006085E1 /* SVGURLImage.swift */; };
+		6E6936C02AE93E45006085E1 /* SVGURLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363B2AE93E44006085E1 /* SVGURLImage.swift */; };
+		6E6936C12AE93E45006085E1 /* SVGDataImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363C2AE93E44006085E1 /* SVGDataImage.swift */; };
+		6E6936C22AE93E45006085E1 /* SVGDataImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363C2AE93E44006085E1 /* SVGDataImage.swift */; };
+		6E6936C32AE93E45006085E1 /* SVGDataImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363C2AE93E44006085E1 /* SVGDataImage.swift */; };
+		6E6936C42AE93E45006085E1 /* SVGPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363E2AE93E44006085E1 /* SVGPolygon.swift */; };
+		6E6936C52AE93E45006085E1 /* SVGPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363E2AE93E44006085E1 /* SVGPolygon.swift */; };
+		6E6936C62AE93E45006085E1 /* SVGPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363E2AE93E44006085E1 /* SVGPolygon.swift */; };
+		6E6936C72AE93E45006085E1 /* SVGLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363F2AE93E44006085E1 /* SVGLine.swift */; };
+		6E6936C82AE93E45006085E1 /* SVGLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363F2AE93E44006085E1 /* SVGLine.swift */; };
+		6E6936C92AE93E45006085E1 /* SVGLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69363F2AE93E44006085E1 /* SVGLine.swift */; };
+		6E6936CA2AE93E45006085E1 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936402AE93E44006085E1 /* SVGPath.swift */; };
+		6E6936CB2AE93E45006085E1 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936402AE93E44006085E1 /* SVGPath.swift */; };
+		6E6936CC2AE93E45006085E1 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936402AE93E44006085E1 /* SVGPath.swift */; };
+		6E6936CD2AE93E45006085E1 /* SVGPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936412AE93E44006085E1 /* SVGPolyline.swift */; };
+		6E6936CE2AE93E45006085E1 /* SVGPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936412AE93E44006085E1 /* SVGPolyline.swift */; };
+		6E6936CF2AE93E45006085E1 /* SVGPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936412AE93E44006085E1 /* SVGPolyline.swift */; };
+		6E6936D02AE93E45006085E1 /* SVGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936422AE93E44006085E1 /* SVGRect.swift */; };
+		6E6936D12AE93E45006085E1 /* SVGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936422AE93E44006085E1 /* SVGRect.swift */; };
+		6E6936D22AE93E45006085E1 /* SVGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936422AE93E44006085E1 /* SVGRect.swift */; };
+		6E6936D32AE93E45006085E1 /* SVGEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936432AE93E44006085E1 /* SVGEllipse.swift */; };
+		6E6936D42AE93E45006085E1 /* SVGEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936432AE93E44006085E1 /* SVGEllipse.swift */; };
+		6E6936D52AE93E45006085E1 /* SVGEllipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936432AE93E44006085E1 /* SVGEllipse.swift */; };
+		6E6936D62AE93E45006085E1 /* SVGCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936442AE93E44006085E1 /* SVGCircle.swift */; };
+		6E6936D72AE93E45006085E1 /* SVGCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936442AE93E44006085E1 /* SVGCircle.swift */; };
+		6E6936D82AE93E45006085E1 /* SVGCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936442AE93E44006085E1 /* SVGCircle.swift */; };
+		6E6936D92AE93E45006085E1 /* SVGLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936462AE93E44006085E1 /* SVGLength.swift */; };
+		6E6936DA2AE93E45006085E1 /* SVGLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936462AE93E44006085E1 /* SVGLength.swift */; };
+		6E6936DB2AE93E45006085E1 /* SVGLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936462AE93E44006085E1 /* SVGLength.swift */; };
+		6E6936DC2AE93E45006085E1 /* SVGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936472AE93E44006085E1 /* SVGColor.swift */; };
+		6E6936DD2AE93E45006085E1 /* SVGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936472AE93E44006085E1 /* SVGColor.swift */; };
+		6E6936DE2AE93E45006085E1 /* SVGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936472AE93E44006085E1 /* SVGColor.swift */; };
+		6E6936DF2AE93E45006085E1 /* SVGFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936482AE93E44006085E1 /* SVGFont.swift */; };
+		6E6936E02AE93E45006085E1 /* SVGFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936482AE93E44006085E1 /* SVGFont.swift */; };
+		6E6936E12AE93E45006085E1 /* SVGFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936482AE93E44006085E1 /* SVGFont.swift */; };
+		6E6936E22AE93E45006085E1 /* SVGPaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936492AE93E44006085E1 /* SVGPaint.swift */; };
+		6E6936E32AE93E45006085E1 /* SVGPaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936492AE93E44006085E1 /* SVGPaint.swift */; };
+		6E6936E42AE93E45006085E1 /* SVGPaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936492AE93E44006085E1 /* SVGPaint.swift */; };
+		6E6936E52AE93E45006085E1 /* SVGPreserveAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364A2AE93E44006085E1 /* SVGPreserveAspectRatio.swift */; };
+		6E6936E62AE93E45006085E1 /* SVGPreserveAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364A2AE93E44006085E1 /* SVGPreserveAspectRatio.swift */; };
+		6E6936E72AE93E45006085E1 /* SVGPreserveAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364A2AE93E44006085E1 /* SVGPreserveAspectRatio.swift */; };
+		6E6936E82AE93E45006085E1 /* SVGGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364B2AE93E44006085E1 /* SVGGradient.swift */; };
+		6E6936E92AE93E45006085E1 /* SVGGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364B2AE93E44006085E1 /* SVGGradient.swift */; };
+		6E6936EA2AE93E45006085E1 /* SVGGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364B2AE93E44006085E1 /* SVGGradient.swift */; };
+		6E6936EB2AE93E45006085E1 /* SVGStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364C2AE93E44006085E1 /* SVGStroke.swift */; };
+		6E6936EC2AE93E45006085E1 /* SVGStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364C2AE93E44006085E1 /* SVGStroke.swift */; };
+		6E6936ED2AE93E45006085E1 /* SVGStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E69364C2AE93E44006085E1 /* SVGStroke.swift */; };
+		6E6936F22AEA19F6006085E1 /* TWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936F12AEA19F6006085E1 /* TWExtension.swift */; };
+		6E6936F32AEA19F6006085E1 /* TWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936F12AEA19F6006085E1 /* TWExtension.swift */; };
+		6E6936F42AEA19F6006085E1 /* TWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6936F12AEA19F6006085E1 /* TWExtension.swift */; };
 		6E7DD5EB2AD5542F003E0C77 /* TermiWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD5EA2AD5542F003E0C77 /* TermiWatchApp.swift */; };
 		6E7DD5F02AD55431003E0C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD5EF2AD55431003E0C77 /* Assets.xcassets */; };
 		6E7DD5F32AD55431003E0C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD5F12AD55431003E0C77 /* LaunchScreen.storyboard */; };
@@ -82,6 +247,62 @@
 		6E43A50A2ADCF81C00B90ED9 /* QTermiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTermiViewModel.swift; sourceTree = "<group>"; };
 		6E43A50D2ADD0E7500B90ED9 /* TermiWatchWidget-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TermiWatchWidget-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		6E43A5132ADD2BFB00B90ED9 /* TermiWatchWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TermiWatchWidget.entitlements; sourceTree = "<group>"; };
+		6E6935352AE92A0A006085E1 /* HFBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HFBundle.bundle; sourceTree = "<group>"; };
+		6E69360A2AE93E44006085E1 /* MBezierPath+Extension_macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MBezierPath+Extension_macOS.swift"; sourceTree = "<group>"; };
+		6E69360B2AE93E44006085E1 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		6E69360D2AE93E44006085E1 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		6E69360E2AE93E44006085E1 /* Serializations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializations.swift; sourceTree = "<group>"; };
+		6E69360F2AE93E44006085E1 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
+		6E6936132AE93E44006085E1 /* SVGLinker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGLinker.swift; sourceTree = "<group>"; };
+		6E6936142AE93E44006085E1 /* SVGLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGLogger.swift; sourceTree = "<group>"; };
+		6E6936152AE93E44006085E1 /* SVGScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGScreen.swift; sourceTree = "<group>"; };
+		6E6936162AE93E44006085E1 /* SVGSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGSettings.swift; sourceTree = "<group>"; };
+		6E6936172AE93E44006085E1 /* SVGParserExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGParserExtensions.swift; sourceTree = "<group>"; };
+		6E6936182AE93E44006085E1 /* SVGContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGContext.swift; sourceTree = "<group>"; };
+		6E6936192AE93E44006085E1 /* SVGPathReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPathReader.swift; sourceTree = "<group>"; };
+		6E69361B2AE93E44006085E1 /* SVGLengthParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGLengthParser.swift; sourceTree = "<group>"; };
+		6E69361C2AE93E44006085E1 /* SVGConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGConstants.swift; sourceTree = "<group>"; };
+		6E69361E2AE93E44006085E1 /* SVGAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGAttribute.swift; sourceTree = "<group>"; };
+		6E69361F2AE93E44006085E1 /* SVGLengthAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGLengthAttribute.swift; sourceTree = "<group>"; };
+		6E6936202AE93E44006085E1 /* SVGFontSizeAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGFontSizeAttribute.swift; sourceTree = "<group>"; };
+		6E6936222AE93E44006085E1 /* SVGShapeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGShapeParser.swift; sourceTree = "<group>"; };
+		6E6936232AE93E44006085E1 /* SVGImageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGImageParser.swift; sourceTree = "<group>"; };
+		6E6936242AE93E44006085E1 /* SVGElementParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGElementParser.swift; sourceTree = "<group>"; };
+		6E6936252AE93E44006085E1 /* SVGTextParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGTextParser.swift; sourceTree = "<group>"; };
+		6E6936262AE93E44006085E1 /* SVGStructureParsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGStructureParsers.swift; sourceTree = "<group>"; };
+		6E6936272AE93E44006085E1 /* SVGParserBasics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGParserBasics.swift; sourceTree = "<group>"; };
+		6E6936282AE93E44006085E1 /* SVGParserPrimitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGParserPrimitives.swift; sourceTree = "<group>"; };
+		6E6936292AE93E44006085E1 /* SVGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
+		6E69362A2AE93E44006085E1 /* SVGParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGParser.swift; sourceTree = "<group>"; };
+		6E69362B2AE93E44006085E1 /* SVGIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGIndex.swift; sourceTree = "<group>"; };
+		6E69362D2AE93E44006085E1 /* CSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSParser.swift; sourceTree = "<group>"; };
+		6E69362F2AE93E44006085E1 /* DOMParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMParser.swift; sourceTree = "<group>"; };
+		6E6936302AE93E44006085E1 /* XMLNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLNode.swift; sourceTree = "<group>"; };
+		6E6936332AE93E44006085E1 /* SVGText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGText.swift; sourceTree = "<group>"; };
+		6E6936342AE93E44006085E1 /* SVGNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGNode.swift; sourceTree = "<group>"; };
+		6E6936352AE93E44006085E1 /* SVGViewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGViewport.swift; sourceTree = "<group>"; };
+		6E6936362AE93E44006085E1 /* SVGShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGShape.swift; sourceTree = "<group>"; };
+		6E6936372AE93E44006085E1 /* SVGGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGGroup.swift; sourceTree = "<group>"; };
+		6E6936382AE93E44006085E1 /* SVGUserSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGUserSpaceNode.swift; sourceTree = "<group>"; };
+		6E6936392AE93E44006085E1 /* SVGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGImage.swift; sourceTree = "<group>"; };
+		6E69363B2AE93E44006085E1 /* SVGURLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGURLImage.swift; sourceTree = "<group>"; };
+		6E69363C2AE93E44006085E1 /* SVGDataImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGDataImage.swift; sourceTree = "<group>"; };
+		6E69363E2AE93E44006085E1 /* SVGPolygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPolygon.swift; sourceTree = "<group>"; };
+		6E69363F2AE93E44006085E1 /* SVGLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGLine.swift; sourceTree = "<group>"; };
+		6E6936402AE93E44006085E1 /* SVGPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
+		6E6936412AE93E44006085E1 /* SVGPolyline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPolyline.swift; sourceTree = "<group>"; };
+		6E6936422AE93E44006085E1 /* SVGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGRect.swift; sourceTree = "<group>"; };
+		6E6936432AE93E44006085E1 /* SVGEllipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGEllipse.swift; sourceTree = "<group>"; };
+		6E6936442AE93E44006085E1 /* SVGCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGCircle.swift; sourceTree = "<group>"; };
+		6E6936462AE93E44006085E1 /* SVGLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGLength.swift; sourceTree = "<group>"; };
+		6E6936472AE93E44006085E1 /* SVGColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGColor.swift; sourceTree = "<group>"; };
+		6E6936482AE93E44006085E1 /* SVGFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGFont.swift; sourceTree = "<group>"; };
+		6E6936492AE93E44006085E1 /* SVGPaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPaint.swift; sourceTree = "<group>"; };
+		6E69364A2AE93E44006085E1 /* SVGPreserveAspectRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGPreserveAspectRatio.swift; sourceTree = "<group>"; };
+		6E69364B2AE93E44006085E1 /* SVGGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGGradient.swift; sourceTree = "<group>"; };
+		6E69364C2AE93E44006085E1 /* SVGStroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGStroke.swift; sourceTree = "<group>"; };
+		6E69364E2AE93E44006085E1 /* SVGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGView.h; sourceTree = "<group>"; };
+		6E6936F12AEA19F6006085E1 /* TWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWExtension.swift; sourceTree = "<group>"; };
 		6E7DD5E32AD5542F003E0C77 /* TermiWatchWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermiWatchWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7DD5EA2AD5542F003E0C77 /* TermiWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermiWatchApp.swift; sourceTree = "<group>"; };
 		6E7DD5EF2AD55431003E0C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +370,187 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6E6936082AE93E44006085E1 /* SVGView */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936092AE93E44006085E1 /* UI */,
+				6E69360C2AE93E44006085E1 /* Serialization */,
+				6E6936102AE93E44006085E1 /* Parser */,
+				6E6936312AE93E44006085E1 /* Model */,
+				6E69364E2AE93E44006085E1 /* SVGView.h */,
+			);
+			path = SVGView;
+			sourceTree = "<group>";
+		};
+		6E6936092AE93E44006085E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6E69360A2AE93E44006085E1 /* MBezierPath+Extension_macOS.swift */,
+				6E69360B2AE93E44006085E1 /* UIExtensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6E69360C2AE93E44006085E1 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				6E69360D2AE93E44006085E1 /* Serializable.swift */,
+				6E69360E2AE93E44006085E1 /* Serializations.swift */,
+				6E69360F2AE93E44006085E1 /* Serializer.swift */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		6E6936102AE93E44006085E1 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936112AE93E44006085E1 /* SVG */,
+				6E69362C2AE93E44006085E1 /* CSS */,
+				6E69362E2AE93E44006085E1 /* XML */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		6E6936112AE93E44006085E1 /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936122AE93E44006085E1 /* Settings */,
+				6E6936172AE93E44006085E1 /* SVGParserExtensions.swift */,
+				6E6936182AE93E44006085E1 /* SVGContext.swift */,
+				6E6936192AE93E44006085E1 /* SVGPathReader.swift */,
+				6E69361A2AE93E44006085E1 /* Primitives */,
+				6E69361C2AE93E44006085E1 /* SVGConstants.swift */,
+				6E69361D2AE93E44006085E1 /* Attributes */,
+				6E6936212AE93E44006085E1 /* Elements */,
+				6E6936272AE93E44006085E1 /* SVGParserBasics.swift */,
+				6E6936282AE93E44006085E1 /* SVGParserPrimitives.swift */,
+				6E6936292AE93E44006085E1 /* SVGView.swift */,
+				6E69362A2AE93E44006085E1 /* SVGParser.swift */,
+				6E69362B2AE93E44006085E1 /* SVGIndex.swift */,
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
+		6E6936122AE93E44006085E1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936132AE93E44006085E1 /* SVGLinker.swift */,
+				6E6936142AE93E44006085E1 /* SVGLogger.swift */,
+				6E6936152AE93E44006085E1 /* SVGScreen.swift */,
+				6E6936162AE93E44006085E1 /* SVGSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		6E69361A2AE93E44006085E1 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				6E69361B2AE93E44006085E1 /* SVGLengthParser.swift */,
+			);
+			path = Primitives;
+			sourceTree = "<group>";
+		};
+		6E69361D2AE93E44006085E1 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				6E69361E2AE93E44006085E1 /* SVGAttribute.swift */,
+				6E69361F2AE93E44006085E1 /* SVGLengthAttribute.swift */,
+				6E6936202AE93E44006085E1 /* SVGFontSizeAttribute.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		6E6936212AE93E44006085E1 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936222AE93E44006085E1 /* SVGShapeParser.swift */,
+				6E6936232AE93E44006085E1 /* SVGImageParser.swift */,
+				6E6936242AE93E44006085E1 /* SVGElementParser.swift */,
+				6E6936252AE93E44006085E1 /* SVGTextParser.swift */,
+				6E6936262AE93E44006085E1 /* SVGStructureParsers.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		6E69362C2AE93E44006085E1 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				6E69362D2AE93E44006085E1 /* CSSParser.swift */,
+			);
+			path = CSS;
+			sourceTree = "<group>";
+		};
+		6E69362E2AE93E44006085E1 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				6E69362F2AE93E44006085E1 /* DOMParser.swift */,
+				6E6936302AE93E44006085E1 /* XMLNode.swift */,
+			);
+			path = XML;
+			sourceTree = "<group>";
+		};
+		6E6936312AE93E44006085E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936322AE93E44006085E1 /* Nodes */,
+				6E69363A2AE93E44006085E1 /* Images */,
+				6E69363D2AE93E44006085E1 /* Shapes */,
+				6E6936452AE93E44006085E1 /* Primitives */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E6936322AE93E44006085E1 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936332AE93E44006085E1 /* SVGText.swift */,
+				6E6936342AE93E44006085E1 /* SVGNode.swift */,
+				6E6936352AE93E44006085E1 /* SVGViewport.swift */,
+				6E6936362AE93E44006085E1 /* SVGShape.swift */,
+				6E6936372AE93E44006085E1 /* SVGGroup.swift */,
+				6E6936382AE93E44006085E1 /* SVGUserSpaceNode.swift */,
+				6E6936392AE93E44006085E1 /* SVGImage.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		6E69363A2AE93E44006085E1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6E69363B2AE93E44006085E1 /* SVGURLImage.swift */,
+				6E69363C2AE93E44006085E1 /* SVGDataImage.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		6E69363D2AE93E44006085E1 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				6E69363E2AE93E44006085E1 /* SVGPolygon.swift */,
+				6E69363F2AE93E44006085E1 /* SVGLine.swift */,
+				6E6936402AE93E44006085E1 /* SVGPath.swift */,
+				6E6936412AE93E44006085E1 /* SVGPolyline.swift */,
+				6E6936422AE93E44006085E1 /* SVGRect.swift */,
+				6E6936432AE93E44006085E1 /* SVGEllipse.swift */,
+				6E6936442AE93E44006085E1 /* SVGCircle.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		6E6936452AE93E44006085E1 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				6E6936462AE93E44006085E1 /* SVGLength.swift */,
+				6E6936472AE93E44006085E1 /* SVGColor.swift */,
+				6E6936482AE93E44006085E1 /* SVGFont.swift */,
+				6E6936492AE93E44006085E1 /* SVGPaint.swift */,
+				6E69364A2AE93E44006085E1 /* SVGPreserveAspectRatio.swift */,
+				6E69364B2AE93E44006085E1 /* SVGGradient.swift */,
+				6E69364C2AE93E44006085E1 /* SVGStroke.swift */,
+			);
+			path = Primitives;
+			sourceTree = "<group>";
+		};
 		6E7DD5DA2AD5542F003E0C77 = {
 			isa = PBXGroup;
 			children = (
@@ -174,12 +576,15 @@
 		6E7DD5E52AD5542F003E0C77 /* TermiWatchWidget */ = {
 			isa = PBXGroup;
 			children = (
+				6E6936F12AEA19F6006085E1 /* TWExtension.swift */,
+				6E6936082AE93E44006085E1 /* SVGView */,
 				6E43A5132ADD2BFB00B90ED9 /* TermiWatchWidget.entitlements */,
 				6E7DD5EA2AD5542F003E0C77 /* TermiWatchApp.swift */,
 				6E7DD5EF2AD55431003E0C77 /* Assets.xcassets */,
 				6E7DD5F12AD55431003E0C77 /* LaunchScreen.storyboard */,
 				6E7DD5F42AD55431003E0C77 /* Info.plist */,
 				6E7DD64B2AD56891003E0C77 /* Settings.bundle */,
+				6E6935352AE92A0A006085E1 /* HFBundle.bundle */,
 			);
 			path = TermiWatchWidget;
 			sourceTree = "<group>";
@@ -334,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD64C2AD56891003E0C77 /* Settings.bundle in Resources */,
+				6E6935362AE92A0A006085E1 /* HFBundle.bundle in Resources */,
 				6E7DD5F32AD55431003E0C77 /* LaunchScreen.storyboard in Resources */,
 				6E7DD5F02AD55431003E0C77 /* Assets.xcassets in Resources */,
 			);
@@ -345,6 +751,7 @@
 			files = (
 				6E7DD60E2AD5546C003E0C77 /* Preview Assets.xcassets in Resources */,
 				6E7DD60B2AD5546C003E0C77 /* Assets.xcassets in Resources */,
+				6E6935372AE92A0A006085E1 /* HFBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +760,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD6402AD5554E003E0C77 /* Assets.xcassets in Resources */,
+				6E6935382AE92A0A006085E1 /* HFBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,12 +771,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6936642AE93E45006085E1 /* SVGScreen.swift in Sources */,
+				6E69368E2AE93E45006085E1 /* SVGStructureParsers.swift in Sources */,
+				6E6936A02AE93E45006085E1 /* CSSParser.swift in Sources */,
+				6E6936C42AE93E45006085E1 /* SVGPolygon.swift in Sources */,
+				6E6936DF2AE93E45006085E1 /* SVGFont.swift in Sources */,
+				6E6936D92AE93E45006085E1 /* SVGLength.swift in Sources */,
+				6E69366A2AE93E45006085E1 /* SVGParserExtensions.swift in Sources */,
+				6E6936CA2AE93E45006085E1 /* SVGPath.swift in Sources */,
+				6E6936CD2AE93E45006085E1 /* SVGPolyline.swift in Sources */,
+				6E69364F2AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */,
+				6E6936C72AE93E45006085E1 /* SVGLine.swift in Sources */,
 				6E7DD5EB2AD5542F003E0C77 /* TermiWatchApp.swift in Sources */,
+				6E69367F2AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */,
+				6E6936822AE93E45006085E1 /* SVGShapeParser.swift in Sources */,
+				6E69369A2AE93E45006085E1 /* SVGParser.swift in Sources */,
+				6E6936942AE93E45006085E1 /* SVGParserPrimitives.swift in Sources */,
+				6E6936AF2AE93E45006085E1 /* SVGViewport.swift in Sources */,
 				6E43A50F2ADD1E8500B90ED9 /* HealthObserver.swift in Sources */,
+				6E6936BB2AE93E45006085E1 /* SVGImage.swift in Sources */,
+				6E6936792AE93E45006085E1 /* SVGAttribute.swift in Sources */,
+				6E6936BE2AE93E45006085E1 /* SVGURLImage.swift in Sources */,
+				6E69365E2AE93E45006085E1 /* SVGLinker.swift in Sources */,
+				6E6936552AE93E45006085E1 /* Serializable.swift in Sources */,
+				6E6936A92AE93E45006085E1 /* SVGText.swift in Sources */,
+				6E6936E82AE93E45006085E1 /* SVGGradient.swift in Sources */,
+				6E69368B2AE93E45006085E1 /* SVGTextParser.swift in Sources */,
+				6E6936AC2AE93E45006085E1 /* SVGNode.swift in Sources */,
+				6E6936B22AE93E45006085E1 /* SVGShape.swift in Sources */,
+				6E6936732AE93E45006085E1 /* SVGLengthParser.swift in Sources */,
+				6E69366D2AE93E45006085E1 /* SVGContext.swift in Sources */,
+				6E6936EB2AE93E45006085E1 /* SVGStroke.swift in Sources */,
+				6E6936E22AE93E45006085E1 /* SVGPaint.swift in Sources */,
+				6E6936522AE93E45006085E1 /* UIExtensions.swift in Sources */,
+				6E69367C2AE93E45006085E1 /* SVGLengthAttribute.swift in Sources */,
+				6E6936A62AE93E45006085E1 /* XMLNode.swift in Sources */,
+				6E6936B82AE93E45006085E1 /* SVGUserSpaceNode.swift in Sources */,
+				6E6936DC2AE93E45006085E1 /* SVGColor.swift in Sources */,
+				6E6936912AE93E45006085E1 /* SVGParserBasics.swift in Sources */,
+				6E69365B2AE93E45006085E1 /* Serializer.swift in Sources */,
 				6E43A5122ADD1EAD00B90ED9 /* ContentView.swift in Sources */,
+				6E6936852AE93E45006085E1 /* SVGImageParser.swift in Sources */,
+				6E6936972AE93E45006085E1 /* SVGView.swift in Sources */,
+				6E6936672AE93E45006085E1 /* SVGSettings.swift in Sources */,
+				6E6936702AE93E45006085E1 /* SVGPathReader.swift in Sources */,
+				6E6936B52AE93E45006085E1 /* SVGGroup.swift in Sources */,
+				6E6936762AE93E45006085E1 /* SVGConstants.swift in Sources */,
+				6E6936D62AE93E45006085E1 /* SVGCircle.swift in Sources */,
+				6E6936C12AE93E45006085E1 /* SVGDataImage.swift in Sources */,
+				6E6936E52AE93E45006085E1 /* SVGPreserveAspectRatio.swift in Sources */,
+				6E6936582AE93E45006085E1 /* Serializations.swift in Sources */,
+				6E6936D32AE93E45006085E1 /* SVGEllipse.swift in Sources */,
+				6E69369D2AE93E45006085E1 /* SVGIndex.swift in Sources */,
 				6E43A50E2ADD1E8200B90ED9 /* WeatherUtils.swift in Sources */,
+				6E6936882AE93E45006085E1 /* SVGElementParser.swift in Sources */,
 				6E43A5102ADD1E8C00B90ED9 /* QTermiViewModel.swift in Sources */,
+				6E6936D02AE93E45006085E1 /* SVGRect.swift in Sources */,
+				6E6936F22AEA19F6006085E1 /* TWExtension.swift in Sources */,
+				6E6936612AE93E45006085E1 /* SVGLogger.swift in Sources */,
 				6E43A5112ADD1E8F00B90ED9 /* QCommonView.swift in Sources */,
+				6E6936A32AE93E45006085E1 /* DOMParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,12 +838,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6936652AE93E45006085E1 /* SVGScreen.swift in Sources */,
+				6E69368F2AE93E45006085E1 /* SVGStructureParsers.swift in Sources */,
+				6E6936A12AE93E45006085E1 /* CSSParser.swift in Sources */,
+				6E6936C52AE93E45006085E1 /* SVGPolygon.swift in Sources */,
+				6E6936E02AE93E45006085E1 /* SVGFont.swift in Sources */,
+				6E6936DA2AE93E45006085E1 /* SVGLength.swift in Sources */,
+				6E69366B2AE93E45006085E1 /* SVGParserExtensions.swift in Sources */,
+				6E6936CB2AE93E45006085E1 /* SVGPath.swift in Sources */,
+				6E6936CE2AE93E45006085E1 /* SVGPolyline.swift in Sources */,
+				6E6936502AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */,
+				6E6936C82AE93E45006085E1 /* SVGLine.swift in Sources */,
 				6E43A5002ADCE96F00B90ED9 /* QCommonView.swift in Sources */,
+				6E6936802AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */,
+				6E6936832AE93E45006085E1 /* SVGShapeParser.swift in Sources */,
+				6E69369B2AE93E45006085E1 /* SVGParser.swift in Sources */,
+				6E6936952AE93E45006085E1 /* SVGParserPrimitives.swift in Sources */,
+				6E6936B02AE93E45006085E1 /* SVGViewport.swift in Sources */,
 				6E43A4FD2ADCCF8700B90ED9 /* HealthObserver.swift in Sources */,
+				6E6936BC2AE93E45006085E1 /* SVGImage.swift in Sources */,
+				6E69367A2AE93E45006085E1 /* SVGAttribute.swift in Sources */,
+				6E6936BF2AE93E45006085E1 /* SVGURLImage.swift in Sources */,
+				6E69365F2AE93E45006085E1 /* SVGLinker.swift in Sources */,
+				6E6936562AE93E45006085E1 /* Serializable.swift in Sources */,
+				6E6936AA2AE93E45006085E1 /* SVGText.swift in Sources */,
+				6E6936E92AE93E45006085E1 /* SVGGradient.swift in Sources */,
+				6E69368C2AE93E45006085E1 /* SVGTextParser.swift in Sources */,
+				6E6936AD2AE93E45006085E1 /* SVGNode.swift in Sources */,
+				6E6936B32AE93E45006085E1 /* SVGShape.swift in Sources */,
+				6E6936742AE93E45006085E1 /* SVGLengthParser.swift in Sources */,
+				6E69366E2AE93E45006085E1 /* SVGContext.swift in Sources */,
+				6E6936EC2AE93E45006085E1 /* SVGStroke.swift in Sources */,
+				6E6936E32AE93E45006085E1 /* SVGPaint.swift in Sources */,
+				6E6936532AE93E45006085E1 /* UIExtensions.swift in Sources */,
+				6E69367D2AE93E45006085E1 /* SVGLengthAttribute.swift in Sources */,
+				6E6936A72AE93E45006085E1 /* XMLNode.swift in Sources */,
+				6E6936B92AE93E45006085E1 /* SVGUserSpaceNode.swift in Sources */,
+				6E6936DD2AE93E45006085E1 /* SVGColor.swift in Sources */,
+				6E6936922AE93E45006085E1 /* SVGParserBasics.swift in Sources */,
+				6E69365C2AE93E45006085E1 /* Serializer.swift in Sources */,
 				6E43A5052ADCE9F900B90ED9 /* WeatherUtils.swift in Sources */,
+				6E6936862AE93E45006085E1 /* SVGImageParser.swift in Sources */,
+				6E6936982AE93E45006085E1 /* SVGView.swift in Sources */,
+				6E6936682AE93E45006085E1 /* SVGSettings.swift in Sources */,
+				6E6936712AE93E45006085E1 /* SVGPathReader.swift in Sources */,
+				6E6936B62AE93E45006085E1 /* SVGGroup.swift in Sources */,
+				6E6936772AE93E45006085E1 /* SVGConstants.swift in Sources */,
+				6E6936D72AE93E45006085E1 /* SVGCircle.swift in Sources */,
+				6E6936C22AE93E45006085E1 /* SVGDataImage.swift in Sources */,
+				6E6936E62AE93E45006085E1 /* SVGPreserveAspectRatio.swift in Sources */,
+				6E6936592AE93E45006085E1 /* Serializations.swift in Sources */,
+				6E6936D42AE93E45006085E1 /* SVGEllipse.swift in Sources */,
+				6E69369E2AE93E45006085E1 /* SVGIndex.swift in Sources */,
 				6E7DD6092AD5546A003E0C77 /* ContentView.swift in Sources */,
+				6E6936892AE93E45006085E1 /* SVGElementParser.swift in Sources */,
 				6E43A5142ADD2EA400B90ED9 /* QTermiViewModel.swift in Sources */,
+				6E6936D12AE93E45006085E1 /* SVGRect.swift in Sources */,
+				6E6936F32AEA19F6006085E1 /* TWExtension.swift in Sources */,
+				6E6936622AE93E45006085E1 /* SVGLogger.swift in Sources */,
 				6E7DD6072AD5546A003E0C77 /* TermiWatchWidgetApp.swift in Sources */,
+				6E6936A42AE93E45006085E1 /* DOMParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,9 +905,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6936A22AE93E45006085E1 /* CSSParser.swift in Sources */,
+				6E6936D52AE93E45006085E1 /* SVGEllipse.swift in Sources */,
+				6E69366F2AE93E45006085E1 /* SVGContext.swift in Sources */,
+				6E6936BD2AE93E45006085E1 /* SVGImage.swift in Sources */,
+				6E6936AE2AE93E45006085E1 /* SVGNode.swift in Sources */,
+				6E6936E42AE93E45006085E1 /* SVGPaint.swift in Sources */,
+				6E6936902AE93E45006085E1 /* SVGStructureParsers.swift in Sources */,
+				6E69365A2AE93E45006085E1 /* Serializations.swift in Sources */,
+				6E69365D2AE93E45006085E1 /* Serializer.swift in Sources */,
+				6E6936D82AE93E45006085E1 /* SVGCircle.swift in Sources */,
+				6E6936DB2AE93E45006085E1 /* SVGLength.swift in Sources */,
+				6E6936ED2AE93E45006085E1 /* SVGStroke.swift in Sources */,
+				6E6936B42AE93E45006085E1 /* SVGShape.swift in Sources */,
+				6E6936CF2AE93E45006085E1 /* SVGPolyline.swift in Sources */,
+				6E6936662AE93E45006085E1 /* SVGScreen.swift in Sources */,
+				6E69369C2AE93E45006085E1 /* SVGParser.swift in Sources */,
+				6E6936C02AE93E45006085E1 /* SVGURLImage.swift in Sources */,
+				6E6936572AE93E45006085E1 /* Serializable.swift in Sources */,
+				6E6936E72AE93E45006085E1 /* SVGPreserveAspectRatio.swift in Sources */,
 				6E43A5012ADCE97000B90ED9 /* QCommonView.swift in Sources */,
+				6E6936512AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */,
+				6E6936692AE93E45006085E1 /* SVGSettings.swift in Sources */,
+				6E69368A2AE93E45006085E1 /* SVGElementParser.swift in Sources */,
+				6E69368D2AE93E45006085E1 /* SVGTextParser.swift in Sources */,
+				6E69366C2AE93E45006085E1 /* SVGParserExtensions.swift in Sources */,
+				6E6936C32AE93E45006085E1 /* SVGDataImage.swift in Sources */,
+				6E6936A52AE93E45006085E1 /* DOMParser.swift in Sources */,
+				6E69369F2AE93E45006085E1 /* SVGIndex.swift in Sources */,
+				6E6936D22AE93E45006085E1 /* SVGRect.swift in Sources */,
+				6E6936CC2AE93E45006085E1 /* SVGPath.swift in Sources */,
+				6E6936602AE93E45006085E1 /* SVGLinker.swift in Sources */,
+				6E6936962AE93E45006085E1 /* SVGParserPrimitives.swift in Sources */,
+				6E6936872AE93E45006085E1 /* SVGImageParser.swift in Sources */,
+				6E6936B72AE93E45006085E1 /* SVGGroup.swift in Sources */,
+				6E6936632AE93E45006085E1 /* SVGLogger.swift in Sources */,
+				6E6936842AE93E45006085E1 /* SVGShapeParser.swift in Sources */,
+				6E6936C62AE93E45006085E1 /* SVGPolygon.swift in Sources */,
 				6E7DD63C2AD5554C003E0C77 /* TermiWatchWidget.swift in Sources */,
+				6E6936F42AEA19F6006085E1 /* TWExtension.swift in Sources */,
+				6E69367B2AE93E45006085E1 /* SVGAttribute.swift in Sources */,
+				6E6936DE2AE93E45006085E1 /* SVGColor.swift in Sources */,
+				6E6936BA2AE93E45006085E1 /* SVGUserSpaceNode.swift in Sources */,
+				6E69367E2AE93E45006085E1 /* SVGLengthAttribute.swift in Sources */,
+				6E6936752AE93E45006085E1 /* SVGLengthParser.swift in Sources */,
+				6E6936AB2AE93E45006085E1 /* SVGText.swift in Sources */,
+				6E6936A82AE93E45006085E1 /* XMLNode.swift in Sources */,
+				6E6936542AE93E45006085E1 /* UIExtensions.swift in Sources */,
+				6E6936E12AE93E45006085E1 /* SVGFont.swift in Sources */,
 				6E7DD6522AD64537003E0C77 /* HealthObserver.swift in Sources */,
+				6E6936812AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */,
+				6E6936B12AE93E45006085E1 /* SVGViewport.swift in Sources */,
+				6E6936722AE93E45006085E1 /* SVGPathReader.swift in Sources */,
+				6E6936EA2AE93E45006085E1 /* SVGGradient.swift in Sources */,
+				6E6936992AE93E45006085E1 /* SVGView.swift in Sources */,
+				6E6936782AE93E45006085E1 /* SVGConstants.swift in Sources */,
+				6E6936932AE93E45006085E1 /* SVGParserBasics.swift in Sources */,
+				6E6936C92AE93E45006085E1 /* SVGLine.swift in Sources */,
 				6E7DD64A2AD5604A003E0C77 /* WeatherUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

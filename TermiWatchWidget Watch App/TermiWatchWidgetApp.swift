@@ -37,3 +37,13 @@ struct TermiWatchWidgetApp: App {
     
 }
 
+#Preview {
+    
+    VStack{
+        Text("100")
+        let img = UIImage(named: "100")!
+
+        Image(uiImage: img).frame(width: 100, height: 100, alignment: .center).backgroundStyle(.white).foregroundStyle(.red)
+
+    }
+}

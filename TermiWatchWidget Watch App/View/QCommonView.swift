@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// 如果配置了和风APIKey，则使用和风API代替WeatherKit
+let HFWeatherKey = ""
+
 let terminalName = "void"
 let leftTopImageName = "LeftTopImage"
 
@@ -15,6 +18,7 @@ let colorAlert2 = Color.red
 let colorTemp = Color(r: 253, g: 143, b: 63)
 let colorHumi = Color.blue
 let colorCond = Color(r: 255, g: 215, b: 0)
+let colorWind = Color.white
 
 let colorKeep1 = Color.cyan
 let colorKeep2 = Color.brown
@@ -40,7 +44,6 @@ struct WeatherViewInfo {
 }
 
 
-
 struct WeatherRectangularView : View {
     var weather: WeatherViewInfo
     
@@ -60,7 +63,7 @@ struct WeatherRectangularView : View {
             }
             HStack {
                 MyText("[CuRR]")
-                Image(systemName: weather.current.symbol).frame(width: 15).imageScale(.small).foregroundStyle(colorCond)
+                WXImage(wxIcon: weather.current.symbol).foregroundStyle(color: colorCond)
                 Text(weather.current.condition).font(font).frame( maxWidth: .infinity,alignment: .leading).foregroundStyle(colorCond).minimumScaleFactor(0.8)
             }.frame(height: 10)
             
@@ -83,7 +86,7 @@ struct WeatherRectangularView : View {
             if(weather.alert.count==0){
                 HStack {
                     MyText("[NEXT]")
-                    Image(systemName: weather.after1Hours.symbol).frame(width: 15).imageScale(.small).foregroundStyle(colorCond)
+                    WXImage(wxIcon: weather.after1Hours.symbol).foregroundStyle(color: colorCond)
                     Text(weather.after1Hours.condition).font(font).frame(alignment: .leading).foregroundStyle(colorCond).minimumScaleFactor(0.8)
                     Text("\(weather.after1Hours.temperature.value)\(weather.after1Hours.temperature.unit)").font(font).foregroundStyle(colorTemp)
                     Text(weather.after1Hours.humidity).font(font).foregroundStyle(colorHumi)
@@ -115,7 +118,7 @@ struct HealthRectangularView : View {
             }.frame(height: 10)
             
             HStack {
-                MyText("[KCAL]")
+                Text("[KCAL]").font(.system(size: 13))
                 Image(systemName: "flame").imageScale(.small).foregroundStyle(colorKcal)
                 MyText("\(health.excercise)").foregroundStyle(colorKcal)
             }.frame(height: 10)
@@ -134,7 +137,6 @@ struct HealthRectangularView : View {
 }
 
 
-
 struct MyText: View {
     let font = Font.system(size: 13)
     let text: String
@@ -147,13 +149,4 @@ struct MyText: View {
         Text(text).font(font).frame(alignment: .leading)
     }
 
-}
-
-extension Color{
-    init(r: Double, g: Double, b: Double){
-        self.init(red: r/255.0, green: g/255.0, blue: b/255.0)
-    }
-    init(r: Double, g: Double, b: Double, a: Double){
-        self.init(red: r/255.0, green: g/255.0, blue: b/255.0, opacity: a)
-    }
 }
