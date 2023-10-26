@@ -5,7 +5,7 @@ Terminal Watch Widget Face for Apple Watch.
 
 ![Watch Face](Screenshots/Watch_Preview.png)
 
-For devices running watchOS 10 or higher.
+For devices running watchOS 10 iOS17 or higher.
 
 Due to the fact that the new version of watchOS no longer supports app persistence,   
 
@@ -22,6 +22,15 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
 ## Prerequisites && Adding a developer account to Xcode
   Refer to TermiWatch's tutorial
   - *TermiWatcht* https://github.com/kuglee/TermiWatch/blob/master/README.md
+
+  1. Xcode Settings Tips  
+    <img src="Screenshots/Xcode_Settings.png" width="60%" height="auto" />  
+    1. Project file navigator  
+    2. Find navigator  
+    3. Project main file, click to display the project settings window on the right  
+    4. Targets. Click on different targets to modify their settings  
+    5. Schemes. Switch the schemes to compile apps for iPhone or Watch
+
 
   1. For each of the 3 **targets** replece *void* in the **Bundle Identifier** field with the name of your developer account. (The name of your Apple ID without the *@xxxx.com*.)  
   <img src="Screenshots/Xcode_Settings1.png" width="60%" height="auto" />
@@ -40,7 +49,7 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
       1. Go to https://id.qweather.com/#/login to apply for the API Key for qweather  
       1. Refer doc https://dev.qweather.com/en/docs/configuration/project-and-key/
       1. Copy **Key** to **HFWeatherKey**  (/TermiWatchWidget Watch App/View/QCommonView.swift)
-      1. Please delete the weatherkit  
+      1. Please delete the **Weatherkit** for each of the 3 **targets**  
       <img src="Screenshots/Xcode_Settings3.png" width="60%" height="auto" />
 
 ## Installing the app

@@ -19,8 +19,9 @@ struct TermiWatch: App {
         WindowGroup {
             ContentView(viewModel: viewModel)
         }
-        
-
+//  如果这里报错，要兼容iOS17以下，true 修改为 false
+//  If an error is reported here, it should be compatible with iOS17 or below, and true should be changed to false
+#if true
         .onChange(of: scenePhase, initial: true) {
             switch scenePhase {
             case .active:
@@ -33,6 +34,15 @@ struct TermiWatch: App {
             @unknown default: break
             }
         }
+#else
+        .onChange(of: scenePhase) { phase in
+
+            if(phase == .active){
+                viewModel.updateModel()
+            }
+        }
+#endif
+
     }
 
     
