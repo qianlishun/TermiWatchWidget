@@ -28,10 +28,12 @@ struct WeatherInfo {
     }
     
     init(current: HFWeatherNow, weathers: [HFWeather24h]){
-        let weathers2 = weathers.map({ hf in
+        var weathers2 = weathers.map({ hf in
             QWeather(hfWeather: hf)
         })
-        self.init(current: QWeather(hfWeather: current), weathers: weathers2, alerts: [String()])
+        let currentQ = QWeather(hfWeather: current)
+        weathers2.insert(currentQ, at: 0)
+        self.init(current: currentQ, weathers: weathers2, alerts: [String()])
     }
 }
 struct QTemperature{
@@ -241,7 +243,6 @@ func getHFWeather(location: CLLocation, handler: (@escaping (WeatherInfo) -> Voi
                         
                         let result2 = try decoder.decode(HFWeather24hResponse.self, from: data!)
                         if(result2.code == "200"){
-                            
                             let hf = WeatherInfo(current: result.now, weathers: result2.hourly)
                             handler(hf)
                             
@@ -274,7 +275,7 @@ func getHFWeather(location: CLLocation, handler: (@escaping (WeatherInfo) -> Voi
 
 class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
     @AppStorage("LastLocation", store: UserDefaults(suiteName: "group.com.void.termiWatch"))
-    var lastLocation: String = "39.9042, 116.4074"{ // Beijing
+    var lastLocation: String = defaultCity{ // Beijing
         didSet{
             print("lastLocation didset")
         }
@@ -350,6 +351,8 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didUpdateLocations \(error)")
+        let location = CLLocation(string: lastLocation)
+        self.handler!(location)
     }
 }
 

@@ -48,19 +48,20 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
   1. Added '和风天气' module, If using '和风天气' to replace weatherkit https://dev.qweather.com/en/docs/
       1. Go to https://id.qweather.com/#/login to apply for the API Key for qweather  
       1. Refer doc https://dev.qweather.com/en/docs/configuration/project-and-key/
-      1. Copy **Key** to **HFWeatherKey**  (/TermiWatchWidget Watch App/View/QCommonView.swift)
+      1. Copy **Key** to **HFWeatherKey**  (/TermiWatchWidget/QConfiguration.swift)
       1. Please delete the **Weatherkit** for each of the 3 **targets**  
       <img src="Screenshots/Xcode_Settings3.png" width="60%" height="auto" />
 
 ## Installing the app
+  1. Watch and iPhone Go to **Settings** -> **Privacy and Security** -> open **Developer Mode** 
   1. Plug your phone into your computer.
   1. Unlock your phone and trust your computer.
   1. Select **Xcode** menu -> **Product** -> **Destination**. At the **Device** section select your phone.
   1. Select **Xcode** menu -> **Product** -> **Run**.
   1. Wait for the app to install on your phone.
-  1. Go to **Settings** -> **General** -> **Profiles & Device Management** on your phone to trust the app.
+  1. iPhone Go to **Settings** -> **General** -> **Profiles & Device Management** on your phone to trust the app.
   1. Install the watchOS app from the **Watch** app.
-
+  1. If  **Device** If the device list does not display 'watch', check if the network connection is on the local area network. If it does not work, restart the phone
 ## Watch Settings
   1. Open Face Gallery Find and add Modular Duo Face  
   ![Duo Modular](Screenshots/Watch_Setting1.png)
@@ -70,6 +71,6 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
     <img src="Screenshots/Watch_Setting3.png" width="40%" height="auto" />
 
 ## Custom UI
-  1. Find /TermiWatchWidget Watch App/View/QCommonView.swift
-  2. Modify text, color. 
-  3. Image path on TermiWatchWidget/TermiWatchWidget_Widget/Assets.xcassets/LeftTopImage.imageset, you can replace it
+  1. Find /TermiWatchWidget/QConfiguration.swift, modify text, color. 
+  1. Image path on TermiWatchWidget/TermiWatchWidget_Widget/Assets.xcassets/LeftTopImage.imageset, you can replace it
+  1. More custom go to /TermiWatchWidget Watch App/View/QCommonView.swift

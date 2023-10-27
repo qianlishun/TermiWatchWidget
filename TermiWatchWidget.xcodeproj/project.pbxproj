@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2CC4262AEBCB0B002E58D5 /* QConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */; };
+		6E2CC4272AEBCB13002E58D5 /* QConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */; };
+		6E2CC4282AEBCB14002E58D5 /* QConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */; };
 		6E43A4FD2ADCCF8700B90ED9 /* HealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD6512AD64537003E0C77 /* HealthObserver.swift */; };
 		6E43A5002ADCE96F00B90ED9 /* QCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43A4FE2ADCE96A00B90ED9 /* QCommonView.swift */; };
 		6E43A5012ADCE97000B90ED9 /* QCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43A4FE2ADCE96A00B90ED9 /* QCommonView.swift */; };
@@ -243,6 +246,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QConfiguration.swift; sourceTree = "<group>"; };
 		6E43A4FE2ADCE96A00B90ED9 /* QCommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QCommonView.swift; sourceTree = "<group>"; };
 		6E43A50A2ADCF81C00B90ED9 /* QTermiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTermiViewModel.swift; sourceTree = "<group>"; };
 		6E43A50D2ADD0E7500B90ED9 /* TermiWatchWidget-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TermiWatchWidget-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -576,6 +580,7 @@
 		6E7DD5E52AD5542F003E0C77 /* TermiWatchWidget */ = {
 			isa = PBXGroup;
 			children = (
+				6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */,
 				6E6936F12AEA19F6006085E1 /* TWExtension.swift */,
 				6E6936082AE93E44006085E1 /* SVGView */,
 				6E43A5132ADD2BFB00B90ED9 /* TermiWatchWidget.entitlements */,
@@ -814,6 +819,7 @@
 				6E6936852AE93E45006085E1 /* SVGImageParser.swift in Sources */,
 				6E6936972AE93E45006085E1 /* SVGView.swift in Sources */,
 				6E6936672AE93E45006085E1 /* SVGSettings.swift in Sources */,
+				6E2CC4262AEBCB0B002E58D5 /* QConfiguration.swift in Sources */,
 				6E6936702AE93E45006085E1 /* SVGPathReader.swift in Sources */,
 				6E6936B52AE93E45006085E1 /* SVGGroup.swift in Sources */,
 				6E6936762AE93E45006085E1 /* SVGConstants.swift in Sources */,
@@ -881,6 +887,7 @@
 				6E6936862AE93E45006085E1 /* SVGImageParser.swift in Sources */,
 				6E6936982AE93E45006085E1 /* SVGView.swift in Sources */,
 				6E6936682AE93E45006085E1 /* SVGSettings.swift in Sources */,
+				6E2CC4272AEBCB13002E58D5 /* QConfiguration.swift in Sources */,
 				6E6936712AE93E45006085E1 /* SVGPathReader.swift in Sources */,
 				6E6936B62AE93E45006085E1 /* SVGGroup.swift in Sources */,
 				6E6936772AE93E45006085E1 /* SVGConstants.swift in Sources */,
@@ -962,6 +969,7 @@
 				6E6936782AE93E45006085E1 /* SVGConstants.swift in Sources */,
 				6E6936932AE93E45006085E1 /* SVGParserBasics.swift in Sources */,
 				6E6936C92AE93E45006085E1 /* SVGLine.swift in Sources */,
+				6E2CC4282AEBCB14002E58D5 /* QConfiguration.swift in Sources */,
 				6E7DD64A2AD5604A003E0C77 /* WeatherUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

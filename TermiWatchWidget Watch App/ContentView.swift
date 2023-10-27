@@ -13,8 +13,8 @@ struct ContentView: View {
 
     var body: some View {
         VStack{
-            WeatherRectangularView(weather: viewModel.weather)
-            HealthRectangularView(health: viewModel.health)
+            WeatherRectangularView(context: nil, weather: viewModel.weather)
+            HealthRectangularView(context: nil, health: viewModel.health)
         }
     }
 }

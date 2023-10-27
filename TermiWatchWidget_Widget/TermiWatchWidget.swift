@@ -76,17 +76,17 @@ struct CircularProvider: TimelineProvider {
 }
 
 struct WeatherProvider: TimelineProvider {
-  
+    
     var widgetLocationManager = WidgetLocationManager()
 
     func placeholder(in context: Context) -> WeatherEntry {
-        return WeatherEntry(weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "cloud.rain", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "snow", temperature: "-5℃",humidity: "50%"),alert: ""))
+        return WeatherEntry(context: context, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-5℃",humidity: "50%"),alert: ""))
 
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WeatherEntry) -> ()) {
 
-        let entry = WeatherEntry(weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "cloud.rain", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "snow", temperature: "-5℃",humidity: "50%"),alert: ""))
+        let entry = WeatherEntry(context: context, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-5℃",humidity: "50%"),alert: ""))
 
         completion(entry)
     }
@@ -95,8 +95,6 @@ struct WeatherProvider: TimelineProvider {
 
         widgetLocationManager.fetchLocation(handler: { location in
             Task{
-                var currentDate = Date()
-                let oneHour: TimeInterval = 60*60
 
                 if(HFWeatherKey.count == 0){
                     let weather = try await getWeather(location: location, afterHours: 3)
@@ -105,9 +103,8 @@ struct WeatherProvider: TimelineProvider {
                     for i in 0..<2{
                         let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
                         
-                        let entry = WeatherEntry(date: currentDate, weather: info)
+                        let entry = WeatherEntry(context: context, date: info.current.date, weather: info)
                         entries.append(entry)
-                        currentDate += oneHour
                     }
                     
                     let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -117,12 +114,11 @@ struct WeatherProvider: TimelineProvider {
                     
                     getHFWeather(location: location) { weather in
                         var entries = [WeatherEntry]()
-                        for i in 0..<6{
+                        for i in 0..<12{
                             let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
                             
-                            let entry = WeatherEntry(date: currentDate, weather: info)
+                            let entry = WeatherEntry(context:context, date: info.current.date, weather: info)
                             entries.append(entry)
-                            currentDate += oneHour
                         }
                         
                         let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -143,21 +139,22 @@ struct HealthProvider: TimelineProvider {
     var healthObserver = HealthObserver()
 
     func placeholder(in context: Context) -> HealthEntry {
-        return HealthEntry(health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
+        return HealthEntry(context: context, health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
     }
 
     func getSnapshot(in context: Context, completion: @escaping (HealthEntry) -> ()) {
-        let entry = HealthEntry(health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
+        let entry = HealthEntry(context: context, health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
             
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-            
+        let refresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date()) ?? Date()
+
         healthObserver.getHealthInfo { health in
-            let entry = HealthEntry( health: health )
+            let entry = HealthEntry( context: context, health: health)
             
-            let timeline = Timeline(entries: [entry], policy: .never)
+            let timeline = Timeline(entries: [entry], policy: .after(refresh))
             
             completion(timeline)
         }
@@ -198,7 +195,7 @@ struct WeatherWidgetEntryView : View {
              
         case .accessoryRectangular: 
             
-            WeatherRectangularView(weather: entry.weather)
+            WeatherRectangularView(context: entry.context, weather: entry.weather)
 
         default:
             VStack{}
@@ -218,7 +215,7 @@ struct HealthWidgetEntryView : View {
                 
         case .accessoryRectangular:
 
-            HealthRectangularView(health: entry.health)
+            HealthRectangularView(context: entry.context, health: entry.health)
             
         default:
             VStack{}
@@ -240,27 +237,40 @@ struct CircularEntry: TimelineEntry {
 }
 
 struct WeatherEntry: TimelineEntry {
+    let context: TimelineProviderContext?
     var date: Date = Date()
     let weather: WeatherViewInfo
 }
 
 struct HealthEntry: TimelineEntry {
+    let context: TimelineProviderContext?
     var date: Date = Date()
     let health: HealthInfo
 }
 
 
+struct TermiWatchWidget_Previews: PreviewProvider{
+    
+    static var previews: some View {
+        Group {
+            
+            WeatherRectangularView(context: nil, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-11℃",humidity: "50%"),alert: "大风预警")).preferredColorScheme(.dark)
+                .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            
+        }
+    }
+}
+
 #Preview(as: .accessoryRectangular) {
     WeatherWidget()
 } timeline: {
-    WeatherEntry(weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "cloud.rain", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "snow", temperature: "-11℃",humidity: "50%"),alert: "大风预警"))
+    WeatherEntry(context: nil, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-11℃",humidity: "50%"),alert: "大风预警"))
 }
-
 
 #Preview(as: .accessoryRectangular) {
     HealthWidget()
 } timeline: {
-    HealthEntry(health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
+    HealthEntry(context: nil, health: HealthInfo(steps: 9999, excercise: 99, excerciseTime: 99, standHours: 99, heartRate: 60))
 }
 
 #Preview(as: .accessoryCircular) {
