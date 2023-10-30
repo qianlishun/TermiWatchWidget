@@ -92,6 +92,7 @@ struct WeatherProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        let formatter = getCurrentFormatter()
 
         widgetLocationManager.fetchLocation(handler: { location in
             Task{
@@ -101,7 +102,9 @@ struct WeatherProvider: TimelineProvider {
                     
                     var entries = [WeatherEntry]()
                     for i in 0..<2{
-                        let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
+                        let dateStr = formatter.string(from: weather.weathers[i].date)
+
+                        let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1], alert: weather.alerts[0], dateText: dateStr)
                         
                         let entry = WeatherEntry(context: context, date: info.current.date, weather: info)
                         entries.append(entry)
@@ -115,7 +118,9 @@ struct WeatherProvider: TimelineProvider {
                     getHFWeather(location: location) { weather in
                         var entries = [WeatherEntry]()
                         for i in 0..<12{
-                            let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1],alert: weather.alerts[0])
+                            let dateStr = formatter.string(from: weather.weathers[i].date)
+
+                            let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1], alert: weather.alerts[0], dateText: dateStr)
                             
                             let entry = WeatherEntry(context:context, date: info.current.date, weather: info)
                             entries.append(entry)
@@ -248,18 +253,6 @@ struct HealthEntry: TimelineEntry {
     let health: HealthInfo
 }
 
-
-struct TermiWatchWidget_Previews: PreviewProvider{
-    
-    static var previews: some View {
-        Group {
-            
-            WeatherRectangularView(context: nil, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-11℃",humidity: "50%"),alert: "大风预警")).preferredColorScheme(.dark)
-                .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
-            
-        }
-    }
-}
 
 #Preview(as: .accessoryRectangular) {
     WeatherWidget()

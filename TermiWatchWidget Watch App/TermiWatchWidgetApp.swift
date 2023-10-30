@@ -12,13 +12,6 @@ import WidgetKit
 struct TermiWatchWidgetApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @State var viewModel = QTermiViewModel()
-
-    @AppStorage("WidgetRowHeight", store: UserDefaults(suiteName: "group.com.void.termiWatch"))
-    var lastLocation: String = "10.0" {
-        didSet{
-            print("WidgetRowHeight didset")
-        }
-    }
     
     var body: some Scene {
         WindowGroup {

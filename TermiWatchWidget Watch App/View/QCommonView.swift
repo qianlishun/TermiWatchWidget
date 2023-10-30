@@ -12,11 +12,17 @@ struct WeatherViewInfo {
     let current: QWeather
     let after1Hours: QWeather
     let alert: String
+    var dateText : String? = nil
     
-    init(current: QWeather, after1Hours: QWeather, alert: String) {
+    init(current: QWeather, after1Hours: QWeather, alert: String, dateText: String?) {
+        self.dateText = dateText
         self.current = current
         self.after1Hours = after1Hours
         self.alert = alert
+    }
+    
+    init(current: QWeather, after1Hours: QWeather, alert: String) {
+        self.init(current: current, after1Hours: after1Hours, alert: alert, dateText: nil)
     }
     
     init(){
@@ -36,7 +42,12 @@ struct WeatherRectangularView : View {
         
         VStack(alignment: .leading,spacing: 0) {
             HStack {
-                MyText("user@\(terminalName):~ $ now").frame(maxWidth: .infinity, alignment: .leading)
+                if((weather.dateText != nil) && weather.dateText!.count > 0){
+                    Text("[DATE]").font(.system(size: qFontSize+0.5))
+                    MyText(weather.dateText!).frame(maxWidth: .infinity, alignment: .leading)
+                }else{
+                    MyText("user@\(terminalName):~ $ now").frame(maxWidth: .infinity, alignment: .leading)
+                }
             }.frame(height: rowHeight)
             if(weather.alert.count>0){
                 HStack {
@@ -106,7 +117,7 @@ struct HealthRectangularView : View {
             }.frame(height: rowHeight)
             
             HStack {
-                Text("[KCAL]").font(.system(size: qFontSize))
+                Text("[KCAL]").font(.system(size: qFontSize-0.5))
                 Image(systemName: "flame").imageScale(.small).foregroundStyle(colorKcal)
                 MyText("\(health.excercise)").foregroundStyle(colorKcal)
             }.frame(height: rowHeight)

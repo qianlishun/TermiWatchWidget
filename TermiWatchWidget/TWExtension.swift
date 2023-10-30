@@ -124,3 +124,38 @@ extension Color {
         return SVGColor(r: r, g: g, b: b, opacity: o)
     }
 }
+
+extension Date{
+
+    func currentDate() -> String{
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        if ( NSLocale.preferredLanguages[0].hasPrefix("zh")){
+            formatter.dateStyle = .full
+            formatter.calendar = Calendar(identifier: .chinese)
+            formatter.locale = Locale(identifier: "zh_CN")
+            var date = formatter.string(from: self)
+            date = date.components(separatedBy: CharacterSet(charactersIn: "年")).last ?? date
+            return date
+        }else{
+            formatter.dateFormat = "EEE MM/dd YYYY"
+            formatter.calendar = Calendar.current
+            return formatter.string(from: self)
+        }
+    }
+}
+
+func getCurrentFormatter() -> DateFormatter{
+    let formatter = DateFormatter()
+    formatter.dateStyle = .long
+    formatter.timeStyle = .none
+    if ( NSLocale.preferredLanguages[0].hasPrefix("zh")){
+        formatter.dateStyle = .full
+        formatter.calendar = Calendar(identifier: .chinese)
+        formatter.locale = Locale(identifier: "zh_CN")
+    }else{
+        formatter.dateFormat = "EEE MM/dd YYYY"
+        formatter.calendar = Calendar.current
+    }
+    return formatter
+}

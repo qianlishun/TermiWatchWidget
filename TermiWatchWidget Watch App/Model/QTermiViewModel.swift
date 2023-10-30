@@ -25,11 +25,11 @@ class QTermiViewModel {
                 if(HFWeatherKey.count==0){
                     let weather = try await getWeather(location: location, afterHours: 2)
                     DispatchQueue.main.async {
-                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0])
+                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0], dateText: Date().currentDate())
                     }
                 }else{
                     getHFWeather(location: location) { weather in
-                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0])
+                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0], dateText: Date().currentDate())
                     }
                 }
             }
