@@ -36,6 +36,7 @@ struct WeatherRectangularView : View {
     var weather: WeatherViewInfo
     
     let font = Font.system(size: qFontSize)
+    let smallFont = Font.system(size: qFontSize-2)
 
     var body: some View{
         let rowHeight = ((context?.displaySize.height ?? qRowHeight*5) / 5.0) + 0.5
@@ -44,7 +45,7 @@ struct WeatherRectangularView : View {
             HStack {
                 if((weather.dateText != nil) && weather.dateText!.count > 0){
                     Text("[DATE]").font(.system(size: qFontSize+0.5))
-                    MyText(weather.dateText!).frame(maxWidth: .infinity, alignment: .leading)
+                    MyText(weather.dateText!).frame(maxWidth: .infinity, alignment: .leading).minimumScaleFactor(0.8)
                 }else{
                     MyText("user@\(terminalName):~ $ now").frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -81,10 +82,12 @@ struct WeatherRectangularView : View {
             if(weather.alert.count==0){
                 HStack {
                     MyText("[NEXT]")
-                    WXImage(wxIcon: weather.after1Hours.symbol).foregroundStyle(color: colorCond)
-                    Text(weather.after1Hours.condition).font(font).frame(alignment: .leading).foregroundStyle(colorCond).minimumScaleFactor(0.8)
-                    Text("\(weather.after1Hours.temperature.value)\(weather.after1Hours.temperature.unit)").font(font).foregroundStyle(colorTemp)
-                    Text(weather.after1Hours.humidity).font(font).foregroundStyle(colorHumi)
+                    HStack{
+                        WXImage(wxIcon: weather.after1Hours.symbol).foregroundStyle(color: colorCond)
+                        Text(weather.after1Hours.condition).font(smallFont).frame(alignment: .leading).foregroundStyle(colorCond)
+                        Text("\(weather.after1Hours.temperature.value)\(weather.after1Hours.temperature.unit)").font(smallFont).foregroundStyle(colorTemp)
+                        Text(weather.after1Hours.humidity).font(smallFont).foregroundStyle(colorHumi)
+                    }.minimumScaleFactor(0.6)
                 }.frame(height: rowHeight)
             }
         }

@@ -201,6 +201,9 @@
 		6E7DD64A2AD5604A003E0C77 /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD6492AD5604A003E0C77 /* WeatherUtils.swift */; };
 		6E7DD64C2AD56891003E0C77 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD64B2AD56891003E0C77 /* Settings.bundle */; };
 		6E7DD6522AD64537003E0C77 /* HealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD6512AD64537003E0C77 /* HealthObserver.swift */; };
+		6EAA2BB62AF0C24600368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
+		6EAA2BB72AF0E39F00368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
+		6EAA2BB82AF0E3A000368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,6 +332,7 @@
 		6E7DD6552AD7D7FC003E0C77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6E7DD6582AD95212003E0C77 /* TermiWatchWidget Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TermiWatchWidget Watch App.entitlements"; sourceTree = "<group>"; };
 		6E7DD6592AD952B6003E0C77 /* TermiWatchWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TermiWatchWidgetExtension.entitlements; sourceTree = "<group>"; };
+		6EAA2BB52AF0C24600368E8D /* JieQi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JieQi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +586,7 @@
 			children = (
 				6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */,
 				6E6936F12AEA19F6006085E1 /* TWExtension.swift */,
+				6EAA2BB52AF0C24600368E8D /* JieQi.swift */,
 				6E6936082AE93E44006085E1 /* SVGView */,
 				6E43A5132ADD2BFB00B90ED9 /* TermiWatchWidget.entitlements */,
 				6E7DD5EA2AD5542F003E0C77 /* TermiWatchApp.swift */,
@@ -786,6 +791,7 @@
 				6E6936CA2AE93E45006085E1 /* SVGPath.swift in Sources */,
 				6E6936CD2AE93E45006085E1 /* SVGPolyline.swift in Sources */,
 				6E69364F2AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */,
+				6EAA2BB62AF0C24600368E8D /* JieQi.swift in Sources */,
 				6E6936C72AE93E45006085E1 /* SVGLine.swift in Sources */,
 				6E7DD5EB2AD5542F003E0C77 /* TermiWatchApp.swift in Sources */,
 				6E69367F2AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */,
@@ -854,6 +860,7 @@
 				6E6936CB2AE93E45006085E1 /* SVGPath.swift in Sources */,
 				6E6936CE2AE93E45006085E1 /* SVGPolyline.swift in Sources */,
 				6E6936502AE93E45006085E1 /* MBezierPath+Extension_macOS.swift in Sources */,
+				6EAA2BB72AF0E39F00368E8D /* JieQi.swift in Sources */,
 				6E6936C82AE93E45006085E1 /* SVGLine.swift in Sources */,
 				6E43A5002ADCE96F00B90ED9 /* QCommonView.swift in Sources */,
 				6E6936802AE93E45006085E1 /* SVGFontSizeAttribute.swift in Sources */,
@@ -940,6 +947,7 @@
 				6E6936C32AE93E45006085E1 /* SVGDataImage.swift in Sources */,
 				6E6936A52AE93E45006085E1 /* DOMParser.swift in Sources */,
 				6E69369F2AE93E45006085E1 /* SVGIndex.swift in Sources */,
+				6EAA2BB82AF0E3A000368E8D /* JieQi.swift in Sources */,
 				6E6936D22AE93E45006085E1 /* SVGRect.swift in Sources */,
 				6E6936CC2AE93E45006085E1 /* SVGPath.swift in Sources */,
 				6E6936602AE93E45006085E1 /* SVGLinker.swift in Sources */,

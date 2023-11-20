@@ -80,13 +80,13 @@ struct WeatherProvider: TimelineProvider {
     var widgetLocationManager = WidgetLocationManager()
 
     func placeholder(in context: Context) -> WeatherEntry {
-        return WeatherEntry(context: context, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-5℃",humidity: "50%"),alert: ""))
+        return WeatherEntry(context: context, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "cloud.rain", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "snow", temperature: "-5℃",humidity: "50%"),alert: ""))
 
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WeatherEntry) -> ()) {
 
-        let entry = WeatherEntry(context: context, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-5℃",humidity: "50%"),alert: ""))
+        let entry = WeatherEntry(context: context, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "cloud.rain", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "snow", temperature: "-5℃",humidity: "50%"),alert: ""))
 
         completion(entry)
     }
@@ -102,7 +102,7 @@ struct WeatherProvider: TimelineProvider {
                     
                     var entries = [WeatherEntry]()
                     for i in 0..<2{
-                        let dateStr = formatter.string(from: weather.weathers[i].date)
+                        let dateStr = formatter.noYear(from: weather.weathers[i].date)
 
                         let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1], alert: weather.alerts[0], dateText: dateStr)
                         
@@ -118,7 +118,7 @@ struct WeatherProvider: TimelineProvider {
                     getHFWeather(location: location) { weather in
                         var entries = [WeatherEntry]()
                         for i in 0..<12{
-                            let dateStr = formatter.string(from: weather.weathers[i].date)
+                            let dateStr = formatter.noYear(from: weather.weathers[i].date)
 
                             let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1], alert: weather.alerts[0], dateText: dateStr)
                             
@@ -257,7 +257,7 @@ struct HealthEntry: TimelineEntry {
 #Preview(as: .accessoryRectangular) {
     WeatherWidget()
 } timeline: {
-    WeatherEntry(context: nil, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "305", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "400", temperature: "-11℃",humidity: "50%"),alert: "大风预警"))
+    WeatherEntry(context: nil, weather: WeatherViewInfo(current: QWeather(date: Date(), condition: "局部小雨", symbol: "cloud.rain", temperature: "20℃",humidity: "50%"), after1Hours: QWeather(date: Date()+3600,condition: "局部大雪", symbol: "snow", temperature: "-11℃",humidity: "50%"),alert: "大风预警"))
 }
 
 #Preview(as: .accessoryRectangular) {

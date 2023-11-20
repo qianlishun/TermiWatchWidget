@@ -8,13 +8,18 @@
 import Foundation
 import SwiftUI
 
-// 如果配置了和风APIKey，则使用和风API代替WeatherKit
+/*
+ 如果配置了和风APIKey，则使用和风API代替WeatherKit
+ https://dev.qweather.com
+ 中文 https://dev.qweather.com/docs/configuration/project-and-key/
+ English https://dev.qweather.com/en/docs/configuration/project-and-key/
+ */
 let HFWeatherKey = ""
 
 let terminalName = "void"
 let leftTopImageName = "LeftTopImage"
 
-let defaultCity = "39.9042, 116.4074" // 经纬度
+let defaultCity = "39.9042, 116.4074" //  (纬度, 经度) (latitude,longitude)
 
 let colorAlert1 = Color.yellow
 let colorAlert2 = Color.red

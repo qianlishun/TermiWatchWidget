@@ -13,17 +13,17 @@ let hfBundle = Bundle(path: Bundle.main.path(forResource: "HFBundle", ofType: "b
 
 struct WXImage: View{
     let wxIcon: String
-    var image: Image?
     var svg: WXSVGView?
     
     init(wxIcon: String) {
         self.wxIcon = wxIcon
-        if(HFWeatherKey.count > 0){
-            svg = WXSVGView(name: wxIcon)
+        if(HFWeatherKey.count > 0 || wxIcon.hasPrefix("svg")){
+            let icon = wxIcon.suffix(from: wxIcon.index(wxIcon.startIndex, offsetBy: 3))
+            svg = WXSVGView(name: String(icon))
         }
     }
     var body: some View{
-        if(HFWeatherKey.count == 0){
+        if(HFWeatherKey.count == 0 && !wxIcon.hasPrefix("svg")){
             Image(systemName: wxIcon).frame(width: 15).imageScale(.small)
         }else{
             svg!
@@ -136,12 +136,26 @@ extension Date{
             formatter.locale = Locale(identifier: "zh_CN")
             var date = formatter.string(from: self)
             date = date.components(separatedBy: CharacterSet(charactersIn: "年")).last ?? date
+            date = date.replacingOccurrences(of: "星期", with: " 周")
+            let jieqi = " " + (getJieQi(date: self) ?? "")
+            date = date.appending(jieqi)
             return date
         }else{
             formatter.dateFormat = "EEE MM/dd YYYY"
             formatter.calendar = Calendar.current
             return formatter.string(from: self)
         }
+    }
+}
+
+extension DateFormatter{
+    func noYear(from: Date) -> String{
+        var date = self.string(from: from)
+        date = date.components(separatedBy: CharacterSet(charactersIn: "年")).last ?? date
+        date = date.replacingOccurrences(of: "星期", with: " 周")
+        let jieqi = " " + (getJieQi(date: from) ?? "")
+        date = date.appending(jieqi)
+        return date
     }
 }
 

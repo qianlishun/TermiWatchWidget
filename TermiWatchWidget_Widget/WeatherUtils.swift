@@ -73,7 +73,7 @@ struct QWeather{
         self.humidity = humidity
     }
     init() {
-        self.init(date: Date() , condition: "", symbol: "", temperature: "",humidity: "")
+        self.init(date: Date() , condition: "", symbol: "sparkles", temperature: "",humidity: "")
     }
     
     init(currentWeather: CurrentWeather, tempMF: MeasurementFormatter){
@@ -172,12 +172,12 @@ struct HFWeatherNow : Codable {
     init(obsTime: Date, text: String, icon: String, temp: String, humidity: String) {
         self.obsTime = obsTime
         self.text = text
-        self.icon = icon
+        self.icon = "svg".appending(icon)
         self.temp = temp
         self.humidity = humidity
     }
     init(){
-        self.init(obsTime: Date(), text: "", icon: "", temp: "", humidity: "")
+        self.init(obsTime: Date(), text: "", icon: "999", temp: "", humidity: "")
     }
 }
 
@@ -191,12 +191,12 @@ struct HFWeather24h : Codable {
     init(fxTime: Date, text: String, icon: String, temp: String, humidity: String) {
         self.fxTime = fxTime
         self.text = text
-        self.icon = icon
+        self.icon = "svg".appending(icon)
         self.temp = temp
         self.humidity = humidity
     }
     init(){
-        self.init(fxTime:Date(),  text: "", icon: "", temp: "", humidity: "")
+        self.init(fxTime:Date(),  text: "", icon: "999", temp: "", humidity: "")
     }
 }
 
