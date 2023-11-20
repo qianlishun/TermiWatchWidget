@@ -14,8 +14,9 @@ here we use widgets to achieve a Watch Face similar to the Terminal effect.
 Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
 
 # Future
- Use **WeatherKit** to obtain weather information. **WeatherKit** only supports **paid developer accounts**.  
- Next, I will add other methods to obtain weather data.
+Use **WeatherKit** to obtain weather information. **WeatherKit** only supports **paid developer accounts**.  
+~Next, I will add other methods to obtain weather data.~  
+**qweather** has been introduced, and you can apply for a Key to replace the WeatherKit yourself.  https://dev.qweather.com/en/
 
 # How to install
 
@@ -34,6 +35,7 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
 
   1. For each of the 3 **targets** replece *void* in the **Bundle Identifier** field with the name of your developer account. (The name of your Apple ID without the *@xxxx.com*.)  
   <img src="Screenshots/Xcode_Settings1.png" width="60%" height="auto" />
+  ***
       
   1. Change the project's team:
       1. Select the **Signing & Capabilities** tab:    
@@ -45,7 +47,12 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
         1. Click the **Replace All** button.
   1. If there is an error in WeatherKit or HealthKit, please set Capability. If you do not use WeatherKit, you do not need to set up WeatherKit.  
   <img src="Screenshots/Xcode_Settings2.png" width="60%" height="auto" />  
-  1. Added '和风天气' module, If using '和风天气' to replace weatherkit https://dev.qweather.com/en/docs/
+***
+ log in to the developer page  https://developer.apple.com/account , certificate->Identifiers，Find the corresponding bundleID.  
+Click to enter, Capabilities -> find WeatherKit and HealthKit打上☑️，in App Services find WeatherKit☑️  
+  <img src="Screenshots/IdentifiersSettings.png" width="60%" height="auto" />   
+***
+  1. Added **qweather** module, If using 'qweather' to replace weatherkit https://dev.qweather.com/en/docs/
       1. Go to https://id.qweather.com/#/login to apply for the API Key for qweather  
       1. Refer doc https://dev.qweather.com/en/docs/configuration/project-and-key/
       1. Copy **Key** to **HFWeatherKey**  (/TermiWatchWidget/QConfiguration.swift)
