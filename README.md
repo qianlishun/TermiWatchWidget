@@ -7,7 +7,7 @@ Terminal Watch Widget Face for Apple Watch.
 
 For devices running watchOS 10 iOS17 or higher.
 
-Due to the fact that the new version of watchOS no longer supports app persistence,   
+Due to the new version of WatchOS not supporting app resident foreground display,
 
 here we use widgets to achieve a Watch Face similar to the Terminal effect.
 
