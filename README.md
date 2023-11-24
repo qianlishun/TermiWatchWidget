@@ -52,7 +52,7 @@ Use **WeatherKit** to obtain weather information. **WeatherKit** only supports *
 ***
 
  log in to the developer page  https://developer.apple.com/account , certificate->Identifiers，Find the corresponding bundleID.  
-Click to enter, Capabilities -> find WeatherKit and HealthKit打上☑️，in App Services find WeatherKit☑️  
+Click to enter, Capabilities -> find WeatherKit and HealthKit ☑️，in App Services find WeatherKit ☑️  
   <img src="Screenshots/IdentifiersSettings.png" width="60%" height="auto" />   
   
 ***
