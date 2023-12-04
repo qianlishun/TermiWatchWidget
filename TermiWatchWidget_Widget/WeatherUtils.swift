@@ -168,7 +168,16 @@ struct HFWeatherNow : Codable {
     let icon: String
     let temp: String
     let humidity: String
-   
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        obsTime = try container.decode(Date.self, forKey: .obsTime)
+        text = try container.decode(String.self, forKey: .text)
+        let iconStr = try container.decode(String.self, forKey: .icon)
+        icon = "svg".appending(iconStr)
+        temp = try container.decode(String.self, forKey: .temp)
+        humidity = try container.decode(String.self, forKey: .humidity)
+    }
     init(obsTime: Date, text: String, icon: String, temp: String, humidity: String) {
         self.obsTime = obsTime
         self.text = text
@@ -187,7 +196,16 @@ struct HFWeather24h : Codable {
     let icon: String
     let temp: String
     let humidity: String
-   
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        fxTime = try container.decode(Date.self, forKey: .fxTime)
+        text = try container.decode(String.self, forKey: .text)
+        let iconStr = try container.decode(String.self, forKey: .icon)
+        icon = "svg".appending(iconStr)
+        temp = try container.decode(String.self, forKey: .temp)
+        humidity = try container.decode(String.self, forKey: .humidity)
+    }
     init(fxTime: Date, text: String, icon: String, temp: String, humidity: String) {
         self.fxTime = fxTime
         self.text = text
@@ -332,7 +350,7 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
         let location = locations.last!
 //        lastLati = location.coordinate.latitude
 //        lastLong = location.coordinate.longitude
-//        
+//
 //        updateTime = Date()
         print("didUpdateLocations \(locations)")
 //

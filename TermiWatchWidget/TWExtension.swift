@@ -17,13 +17,13 @@ struct WXImage: View{
     
     init(wxIcon: String) {
         self.wxIcon = wxIcon
-        if(HFWeatherKey.count > 0 || wxIcon.hasPrefix("svg")){
+        if(HFWeatherKey.count > 0 && wxIcon.hasPrefix("svg")){
             let icon = wxIcon.suffix(from: wxIcon.index(wxIcon.startIndex, offsetBy: 3))
             svg = WXSVGView(name: String(icon))
         }
     }
     var body: some View{
-        if(HFWeatherKey.count == 0 && !wxIcon.hasPrefix("svg")){
+        if(HFWeatherKey.count == 0 || !wxIcon.hasPrefix("svg")){
             Image(systemName: wxIcon).frame(width: 15).imageScale(.small)
         }else{
             svg!
