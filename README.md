@@ -86,3 +86,6 @@ Click to enter, Capabilities -> find WeatherKit and HealthKit ☑️，in App Se
   1. Find /TermiWatchWidget/QConfiguration.swift, modify text, color. 
   1. Image path on TermiWatchWidget/TermiWatchWidget_Widget/Assets.xcassets/LeftTopImage.imageset, you can replace it
   1. More custom go to /TermiWatchWidget Watch App/View/QCommonView.swift
+
+### Possible defects
+  1. Due to the refresh mechanism of Widges, there is a limit on the number of daily updates, and there may be a lag in data updates.
