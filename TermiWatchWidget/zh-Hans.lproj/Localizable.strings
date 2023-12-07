@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TermiWatchWidget
+
+  Created by Qianlishun on 2023/12/7.
+  
+*/
+
+"Sync Dial" = "同步表盘";
+"Weather" = "天气";
+"Health" = "健康";
+"Circular" = "图片";

@@ -204,6 +204,10 @@
 		6EAA2BB62AF0C24600368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
 		6EAA2BB72AF0E39F00368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
 		6EAA2BB82AF0E3A000368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
+		6EF24C1F2B21D4430047C1A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EFD708B2B21C3D500143963 /* Localizable.strings */; };
+		6EFD70842B21BFB600143963 /* TermiWatchWidget.watchface in Resources */ = {isa = PBXBuildFile; fileRef = 6EFD70832B21BFB600143963 /* TermiWatchWidget.watchface */; };
+		6EFD70882B21C3D500143963 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EFD708B2B21C3D500143963 /* Localizable.strings */; };
+		6EFD70892B21C3D500143963 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EFD708B2B21C3D500143963 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,6 +337,9 @@
 		6E7DD6582AD95212003E0C77 /* TermiWatchWidget Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TermiWatchWidget Watch App.entitlements"; sourceTree = "<group>"; };
 		6E7DD6592AD952B6003E0C77 /* TermiWatchWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TermiWatchWidgetExtension.entitlements; sourceTree = "<group>"; };
 		6EAA2BB52AF0C24600368E8D /* JieQi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JieQi.swift; sourceTree = "<group>"; };
+		6EFD70832B21BFB600143963 /* TermiWatchWidget.watchface */ = {isa = PBXFileReference; lastKnownFileType = file; path = TermiWatchWidget.watchface; sourceTree = "<group>"; };
+		6EFD708A2B21C3D500143963 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6EFD708C2B21C3D600143963 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,6 +591,7 @@
 		6E7DD5E52AD5542F003E0C77 /* TermiWatchWidget */ = {
 			isa = PBXGroup;
 			children = (
+				6EFD70832B21BFB600143963 /* TermiWatchWidget.watchface */,
 				6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */,
 				6E6936F12AEA19F6006085E1 /* TWExtension.swift */,
 				6EAA2BB52AF0C24600368E8D /* JieQi.swift */,
@@ -595,6 +603,7 @@
 				6E7DD5F42AD55431003E0C77 /* Info.plist */,
 				6E7DD64B2AD56891003E0C77 /* Settings.bundle */,
 				6E6935352AE92A0A006085E1 /* HFBundle.bundle */,
+				6EFD708B2B21C3D500143963 /* Localizable.strings */,
 			);
 			path = TermiWatchWidget;
 			sourceTree = "<group>";
@@ -749,7 +758,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD64C2AD56891003E0C77 /* Settings.bundle in Resources */,
+				6EFD70882B21C3D500143963 /* Localizable.strings in Resources */,
 				6E6935362AE92A0A006085E1 /* HFBundle.bundle in Resources */,
+				6EFD70842B21BFB600143963 /* TermiWatchWidget.watchface in Resources */,
 				6E7DD5F32AD55431003E0C77 /* LaunchScreen.storyboard in Resources */,
 				6E7DD5F02AD55431003E0C77 /* Assets.xcassets in Resources */,
 			);
@@ -760,6 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD60E2AD5546C003E0C77 /* Preview Assets.xcassets in Resources */,
+				6EFD70892B21C3D500143963 /* Localizable.strings in Resources */,
 				6E7DD60B2AD5546C003E0C77 /* Assets.xcassets in Resources */,
 				6E6935372AE92A0A006085E1 /* HFBundle.bundle in Resources */,
 			);
@@ -770,6 +782,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E7DD6402AD5554E003E0C77 /* Assets.xcassets in Resources */,
+				6EF24C1F2B21D4430047C1A7 /* Localizable.strings in Resources */,
 				6E6935382AE92A0A006085E1 /* HFBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1005,6 +1018,15 @@
 				6E7DD6552AD7D7FC003E0C77 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6EFD708B2B21C3D500143963 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EFD708A2B21C3D500143963 /* zh-Hans */,
+				6EFD708C2B21C3D600143963 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

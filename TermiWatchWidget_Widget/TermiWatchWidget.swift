@@ -25,7 +25,7 @@ struct CircularWidget: Widget{
         StaticConfiguration(kind: kind, provider: CircularProvider()) { entry in
             CircularWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
-        }.configurationDisplayName("Circular")
+        }.configurationDisplayName(LocalizedStringKey("Circular"))
     }
 
 }
@@ -38,7 +38,7 @@ struct WeatherWidget: Widget {
         StaticConfiguration(kind: kind, provider: WeatherProvider()) { entry in
             WeatherWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
-        }.configurationDisplayName("Weather")
+        }.configurationDisplayName(LocalizedStringKey("Weather"))
     }
 
 }
@@ -51,7 +51,7 @@ struct HealthWidget: Widget {
         StaticConfiguration(kind: kind, provider: HealthProvider()) { entry in
             HealthWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
-        }.configurationDisplayName("Health")
+        }.configurationDisplayName(LocalizedStringKey("Health"))
     }
 
 }
