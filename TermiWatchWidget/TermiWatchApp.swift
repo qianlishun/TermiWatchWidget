@@ -25,7 +25,7 @@ struct TermiWatch: App {
                 ContentView(viewModel: viewModel)
                 Spacer()
                 HStack(alignment: .bottom, content: {
-                    Button(LocalizedStringKey("Sync Dial"), action: addWatchFace).frame(width: 200,height: 50).background(.orange).foregroundStyle(.black).border(.black, width: 1).cornerRadius(5)
+                    Button(LocalizedStringKey("Sync Watch Face"), action: addWatchFace).frame(width: 200,height: 50).background(.orange).foregroundStyle(.black).border(.black, width: 1).cornerRadius(5)
 
                 })
                 Spacer()
