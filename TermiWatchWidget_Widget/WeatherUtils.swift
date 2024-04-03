@@ -49,8 +49,10 @@ struct QTemperature{
         }else{
             let unitIndex = str.index(str.endIndex, offsetBy: -1)
             let unit = String(str[unitIndex])
-            let temp = str.replacingOccurrences(of: unit, with: "")
-            
+            var temp = str.replacingOccurrences(of: unit, with: "")
+            if(temp == "-0"){
+                temp = "0"
+            }
             self.init(value: temp, unit: unit)
         }
     }
