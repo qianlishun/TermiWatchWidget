@@ -98,10 +98,10 @@ struct WeatherProvider: TimelineProvider {
             Task{
 
                 if(HFWeatherKey.count == 0){
-                    let weather = try await getWeather(location: location, afterHours: 3)
+                    let weather = try await getWeather(location: location, afterHours: 6)
                     
                     var entries = [WeatherEntry]()
-                    for i in 0..<2{
+                    for i in 0..<5{
                         let dateStr = formatter.noYear(from: weather.weathers[i].date)
 
                         let info = WeatherViewInfo(current: weather.weathers[i], after1Hours: weather.weathers[i+1], alert: weather.alerts[0], dateText: dateStr)
@@ -133,9 +133,8 @@ struct WeatherProvider: TimelineProvider {
                     
                 }
             }
-            WidgetCenter.shared.reloadTimelines(ofKind: "HealthWidget")
-
         })
+        WidgetCenter.shared.reloadTimelines(ofKind: "HealthWidget")
     }
 }
 
@@ -154,8 +153,10 @@ struct HealthProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let refresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date()) ?? Date()
-
+        var refresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date()) ?? Date()
+        if(isEveningNow()){
+            refresh = Calendar.current.date(byAdding: .hour, value: 4, to: Date()) ?? Date()
+        }
         healthObserver.getHealthInfo { health in
             let entry = HealthEntry( context: context, health: health)
             
@@ -164,6 +165,14 @@ struct HealthProvider: TimelineProvider {
             completion(timeline)
         }
     }
+    func isEveningNow() -> Bool {
+       let date = Date()
+       let calendar = Calendar.current
+       let components = calendar.component(.hour, from: date)
+       
+       // 定义晚上的时间范围，例如从22:00到06:00
+       return components >= 22 && components <= 6
+   }
 }
 
 struct CircularWidgetEntryView : View{

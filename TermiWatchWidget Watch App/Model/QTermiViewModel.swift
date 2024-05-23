@@ -19,7 +19,7 @@ class QTermiViewModel {
     let widgetLocationManager = WidgetLocationManager()
 
     func updateModel(){
-        
+        print("updateModel \n")
         widgetLocationManager.fetchLocation(handler: { location in
             Task{
                 if(HFWeatherKey.count==0){
@@ -38,6 +38,7 @@ class QTermiViewModel {
         healthObserver.getHealthInfo { health in
             DispatchQueue.main.async {
                 self.health = health
+                print("self.health \n")
             }
         }
         
