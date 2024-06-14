@@ -134,7 +134,6 @@ struct WeatherProvider: TimelineProvider {
                 }
             }
         })
-        WidgetCenter.shared.reloadTimelines(ofKind: "HealthWidget")
     }
 }
 
@@ -153,10 +152,10 @@ struct HealthProvider: TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var refresh = Calendar.current.date(byAdding: .minute, value: 30, to: Date()) ?? Date()
-        if(isEveningNow()){
-            refresh = Calendar.current.date(byAdding: .hour, value: 4, to: Date()) ?? Date()
-        }
+        var refresh = Calendar.current.date(byAdding: .minute, value: 20, to: Date()) ?? Date()
+//        if(isEveningNow()){
+//            refresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()
+//        }
         healthObserver.getHealthInfo { health in
             let entry = HealthEntry( context: context, health: health)
             
@@ -171,7 +170,7 @@ struct HealthProvider: TimelineProvider {
        let components = calendar.component(.hour, from: date)
        
        // 定义晚上的时间范围，例如从22:00到06:00
-       return components >= 22 && components <= 6
+       return components >= 22 && components < 6
    }
 }
 
