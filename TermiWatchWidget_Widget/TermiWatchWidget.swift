@@ -153,9 +153,9 @@ struct HealthProvider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var refresh = Calendar.current.date(byAdding: .minute, value: 20, to: Date()) ?? Date()
-//        if(isEveningNow()){
-//            refresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()
-//        }
+        if(isEveningNow()){
+            refresh = Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()
+        }
         healthObserver.getHealthInfo { health in
             let entry = HealthEntry( context: context, health: health)
             

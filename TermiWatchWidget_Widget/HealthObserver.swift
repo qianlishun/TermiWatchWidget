@@ -92,7 +92,6 @@ class HealthObserver {
         let predicate = HKQuery.predicateForActivitySummary(
             with: DateComponents(components: [.year, .month, .day], date: Date())
         )
-        
         let query = HKActivitySummaryQuery(predicate: predicate) { query, results, error in
             
             if error != nil {
@@ -105,6 +104,8 @@ class HealthObserver {
     }
     func subscribeToActivitySummary(sampleType: HKSampleType,completion: @escaping (_ summary: HKActivitySummary) -> Void){
         
+        var isStop = false
+
         let query = HKObserverQuery(
             sampleType: sampleType,
             predicate: nil
@@ -114,9 +115,11 @@ class HealthObserver {
                 
                 return
             }
-            
-            self.fetchActivitySummary { summary in
-                completion(summary)
+            if(!isStop){
+                self.fetchActivitySummary { summary in
+                    completion(summary)
+                }
+                isStop = true
             }
             
         }
@@ -185,31 +188,77 @@ class HealthObserver {
 extension HealthObserver {
     
     func getHealthInfo(completion: @escaping (HealthInfo) -> ()) {
-        
         print("getHealthInfo...")
-        self.getCurrentSteps { steps in
-            self.getActiveEnergyBurned { excercise in
-                self.getExerciseTime { excerciseTime in
-                    self.getStandHours { standHours in
-                        self.getHeartRate { heartRate in
-                            let health = HealthInfo(steps: steps, excercise: excercise, excerciseTime: excerciseTime, standHours: standHours, heartRate: heartRate)
-                            print(health)
-                            completion(health)
-                        }
-                    }
-                }
+
+        let group = DispatchGroup.init()
+        let queue = DispatchQueue.global()
+        
+        var _steps = 0
+        var _excercise = 0
+        var _excerciseTime = 0
+        var _standHours = 0
+        var _heartRate = 0
+        
+        queue.async(group: group, execute: {
+            group.enter()
+            self.getCurrentSteps { steps in
+                _steps = steps
+                group.leave()
+                print("getCurrentSteps done")
             }
+        })
+        queue.async(group: group, execute: {
+            group.enter()
+            self.getActiveEnergyBurned { excercise in
+                _excercise = excercise
+                group.leave()
+                print("getActiveEnergyBurned done")
+            }
+        })
+        queue.async(group: group, execute: {
+            group.enter()
+            self.getExerciseTime { excerciseTime in
+                _excerciseTime = excerciseTime
+                group.leave()
+                print("getExerciseTime done")
+            }
+        })
+        queue.async(group: group, execute: {
+            group.enter()
+            self.getStandHours { standHours in
+                _standHours = standHours
+                group.leave()
+                print("getStandHours done")
+            }
+        })
+        queue.async(group: group, execute: {
+            group.enter()
+            self.getHeartRate { heartRate in
+                _heartRate = heartRate
+                group.leave()
+                print("getHeartRate done")
+            }
+        })
+        
+        group.notify(queue: queue){
+            let health = HealthInfo(steps: _steps, excercise: _excercise, excerciseTime: _excerciseTime, standHours: _standHours, heartRate: _heartRate)
+            
+            print(health)
+            completion(health)
         }
     }
     
    
     func getCurrentSteps(completion: @escaping (Int) -> ()) {
         let type: HKQuantityType = HKQuantityType(HKQuantityTypeIdentifier.stepCount)
-        
+        print("getCurrentSteps")
+
         subscribeToStatisticsForToday(forQuantityType: type, unit: HKUnit.count(), options: .cumulativeSum, completion: completion)
     }
     
     func getActiveEnergyBurned(completion: @escaping(Int) -> ()){
+        print("getActiveEnergyBurned")
+        
         subscribeToActivitySummary(sampleType: HKQuantityType(HKQuantityTypeIdentifier.activeEnergyBurned)) { summary in
             
             let excerciseValue = summary.activeEnergyBurned.doubleValue(
@@ -220,6 +269,8 @@ extension HealthObserver {
     }
     
     func getExerciseTime(completion: @escaping(Int) -> ()){
+        print("getExerciseTime")
+
         subscribeToActivitySummary(sampleType: HKQuantityType(HKQuantityTypeIdentifier.appleExerciseTime)) { summary in
             
             let time = summary.appleExerciseTime.doubleValue(
@@ -230,6 +281,8 @@ extension HealthObserver {
     }
     
     func getStandHours(completion: @escaping(Int) -> ()){
+        print("getStandHours")
+
         subscribeToActivitySummary(sampleType:HKCategoryType(.appleStandHour)) { summary in
             
             let stamd = summary.appleStandHours.doubleValue(
@@ -240,6 +293,8 @@ extension HealthObserver {
     }
 
     func getHeartRate(completion: @escaping(Int) -> ()){
+        print("getHeartRate")
+
         fetchSample(quantityType: HKQuantityType(.heartRate), unit: HKUnit(from: "count/min"), completion: completion)
     }
 
