@@ -68,11 +68,19 @@ Click to enter, Capabilities -> find WeatherKit and HealthKit ☑️，in App Se
   1. Watch and iPhone Go to **Settings** -> **Privacy and Security** -> open **Developer Mode** 
   1. Plug your phone into your computer.
   1. Unlock your phone and trust your computer.
-  1. Select **Xcode** menu -> **Product** -> **Destination**. At the **Device** section select your phone.
-  1. Select **Xcode** menu -> **Product** -> **Run**.
-  1. Wait for the app to install on your phone.
-  1. iPhone Go to **Settings** -> **General** -> **Profiles & Device Management** on your phone to trust the app.
-  1. Install the watchOS app from the **Watch** app.
+  1. Two ways  
+    1. Select **Xcode** menu -> **Product** -> **Scheme**, select **TermiWatchWdiget**, -> **Destination** select your phone.  
+    2. Select **Xcode** menu -> **Product** -> **Run**.  
+    3. Wait for the app to install on your phone.  
+    4. Select **Xcode** menu -> **Product** -> **Scheme**, select **TermiWatchWdiget Watch App**, **Product** -> **Destination** select your watch.    
+    5. Select **Xcode** menu -> **Product** -> **Run**.  
+    6. Wait for the app to install on your watch.   
+  1. Or  
+    1. Select **Xcode** menu -> **Product** -> **Destination**. At the **Device** section select your phone.  
+    2. Select **Xcode** menu -> **Product** -> **Run**.  
+    3. Wait for the app to install on your phone.  
+    4. iPhone Go to **Settings** -> **General** -> **Profiles & Device Management** on your phone to trust the app.  
+    5. Install the watchOS app from the **Watch** app.  
   1. If  **Device** If the device list does not display 'watch', check if the network connection is on the local area network. If it does not work, restart the phone
 ## Watch Settings
   1. Open this App on iPhone, click **"Sync Watch Face"**.  
