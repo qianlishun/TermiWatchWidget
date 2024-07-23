@@ -81,7 +81,7 @@ Click to enter, Capabilities -> find WeatherKit and HealthKit ☑️，in App Se
     3. Wait for the app to install on your phone.  
     4. iPhone Go to **Settings** -> **General** -> **Profiles & Device Management** on your phone to trust the app.  
     5. Install the watchOS app from the **Watch** app.  
-  1. If  **Device** If the device list does not display 'watch', check if the network connection is on the local area network. If it does not work, restart the phone
+  1. If  **Device** list does not display 'watch', check the network connection is on the local area network. If it does not work, restart the phone
 ## Watch Settings
   1. Open this App on iPhone, click **"Sync Watch Face"**.  
   1. Check "My Faces", select and set it.
