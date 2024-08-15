@@ -26,8 +26,10 @@ struct TermiWatchWidgetApp: App {
             switch scenePhase {
             case .active:
                 print("📲 active")
+                WidgetCenter.shared.reloadTimelines(ofKind: "HealthWidget" )
+                WidgetCenter.shared.reloadTimelines(ofKind: "WeatherWidget" )
+
                 viewModel.updateModel()
-                WidgetCenter.shared.reloadAllTimelines()
             case .inactive:
                 print("📲 inactive")
             case .background:
@@ -40,7 +42,8 @@ struct TermiWatchWidgetApp: App {
 
             if(phase == .active){
                 viewModel.updateModel()
-                WidgetCenter.shared.reloadAllTimelines()
+                WidgetCenter.shared.reloadTimelines(ofKind: "HealthWidget" )
+                WidgetCenter.shared.reloadTimelines(ofKind: "WeatherWidget" )
             }
         }
 #endif

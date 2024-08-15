@@ -203,40 +203,40 @@ extension HealthObserver {
             group.enter()
             self.getCurrentSteps { steps in
                 _steps = steps
-                group.leave()
                 print("getCurrentSteps done")
+                group.leave()
             }
         })
         queue.async(group: group, execute: {
             group.enter()
             self.getActiveEnergyBurned { excercise in
                 _excercise = excercise
-                group.leave()
                 print("getActiveEnergyBurned done")
+                group.leave()
             }
         })
         queue.async(group: group, execute: {
             group.enter()
             self.getExerciseTime { excerciseTime in
                 _excerciseTime = excerciseTime
-                group.leave()
                 print("getExerciseTime done")
+                group.leave()
             }
         })
         queue.async(group: group, execute: {
             group.enter()
             self.getStandHours { standHours in
                 _standHours = standHours
-                group.leave()
                 print("getStandHours done")
+                group.leave()
             }
         })
         queue.async(group: group, execute: {
             group.enter()
             self.getHeartRate { heartRate in
                 _heartRate = heartRate
-                group.leave()
                 print("getHeartRate done")
+                group.leave()
             }
         })
         
