@@ -8,11 +8,11 @@
 import HealthKit
 
 struct HealthInfo {
-    let steps: Int
-    let excercise: Int
-    let excerciseTime: Int
-    let standHours: Int
-    let heartRate: Int
+    var steps: Int
+    var excercise: Int
+    var excerciseTime: Int
+    var standHours: Int
+    var heartRate: Int
     
     init(steps: Int, excercise: Int, excerciseTime: Int, standHours: Int, heartRate: Int) {
         self.steps = steps
@@ -188,66 +188,80 @@ class HealthObserver {
 extension HealthObserver {
     
     func getHealthInfo(completion: @escaping (HealthInfo) -> ()) {
+        
         print("getHealthInfo...")
 
-        let group = DispatchGroup.init()
-        let queue = DispatchQueue.global()
         
-        var _steps = 0
-        var _excercise = 0
-        var _excerciseTime = 0
-        var _standHours = 0
-        var _heartRate = 0
+        var health = HealthInfo(steps: -1, excercise: -1, excerciseTime: -1, standHours: -1, heartRate: -1);
         
-        queue.async(group: group, execute: {
-            group.enter()
-            self.getCurrentSteps { steps in
-                _steps = steps
-                print("getCurrentSteps done")
-                group.leave()
-            }
-        })
-        queue.async(group: group, execute: {
-            group.enter()
-            self.getActiveEnergyBurned { excercise in
-                _excercise = excercise
-                print("getActiveEnergyBurned done")
-                group.leave()
-            }
-        })
-        queue.async(group: group, execute: {
-            group.enter()
-            self.getExerciseTime { excerciseTime in
-                _excerciseTime = excerciseTime
-                print("getExerciseTime done")
-                group.leave()
-            }
-        })
-        queue.async(group: group, execute: {
-            group.enter()
-            self.getStandHours { standHours in
-                _standHours = standHours
-                print("getStandHours done")
-                group.leave()
-            }
-        })
-        queue.async(group: group, execute: {
-            group.enter()
-            self.getHeartRate { heartRate in
-                _heartRate = heartRate
-                print("getHeartRate done")
-                group.leave()
-            }
-        })
-        
-        group.notify(queue: queue){
-            let health = HealthInfo(steps: _steps, excercise: _excercise, excerciseTime: _excerciseTime, standHours: _standHours, heartRate: _heartRate)
+        tryGetHealthInfo { info in
             
-            print(health)
-            completion(health)
+            if(info.steps >= 0){
+                health.steps = info.steps;
+            }
+            if(info.excercise >= 0){
+                health.excercise = info.excercise;
+            }
+            if(info.excerciseTime >= 0){
+                health.excerciseTime = info.excerciseTime;
+            }
+            if(info.standHours >= 0){
+                health.standHours = info.standHours;
+            }
+            if(info.heartRate >= 0){
+                health.heartRate = info.heartRate;
+            }
+            if(health.steps >= 0 && health.excercise >= 0 && health.excerciseTime >= 0
+               && health.standHours >= 0 && health.heartRate >= 0){
+                print(health)
+                completion(health)
+            }
+            
         }
     }
     
+    func tryGetHealthInfo(completion: @escaping (HealthInfo) -> ()) {
+
+        var health = HealthInfo(steps: -1, excercise: -1, excerciseTime: -1, standHours: -1, heartRate: -1);
+        
+        let queue = DispatchQueue.global()
+
+        queue.async {
+            self.getCurrentSteps { steps in
+                health.steps = steps
+                print("getCurrentSteps done")
+                completion(health)
+            }
+        }
+        queue.async {
+            self.getActiveEnergyBurned { excercise in
+                health.excercise = excercise
+                print("getActiveEnergyBurned done")
+                completion(health)
+            }
+        }
+        queue.async {
+            self.getExerciseTime { excerciseTime in
+                health.excerciseTime = excerciseTime
+                print("getExerciseTime done")
+                completion(health)
+            }
+        }
+        queue.async {
+            self.getStandHours { standHours in
+                health.standHours = standHours
+                print("getStandHours done")
+                completion(health)
+            }
+        }
+        queue.async {
+            self.getHeartRate { heartRate in
+                health.heartRate = heartRate
+                print("getHeartRate done")
+                completion(health)
+            }
+        }
+    }
    
     func getCurrentSteps(completion: @escaping (Int) -> ()) {
         let type: HKQuantityType = HKQuantityType(HKQuantityTypeIdentifier.stepCount)

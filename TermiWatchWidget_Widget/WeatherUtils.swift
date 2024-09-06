@@ -254,7 +254,10 @@ func getHFWeather(location: CLLocation, handler: (@escaping (WeatherInfo) -> Voi
     
     URLSession(configuration: sessionConfig).dataTask(with: request) { data, response, error in
         do {
-            
+            if(data == nil){
+                print(error ?? " error")
+                return
+            }
             let result = try decoder.decode(HFWeatherNowResponse.self, from: data!)
             if(result.code == "200"){
                 
@@ -337,7 +340,7 @@ class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
         let now:Double = Date().timeIntervalSince1970
         let last:Double = Double(lastLocationTime) ?? 0
 
-        if( now - last < 3600*12){
+        if( (now - last) < 3600*12){
             print("use cache Location")
             let location = CLLocation(string: lastLocation)
             handler(location)
