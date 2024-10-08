@@ -106,7 +106,6 @@ struct HealthRectangularView : View {
         VStack(alignment: .leading,spacing: 0) {
             HStack{
                 MyText("[KEEP]")
-                MyText("")
                 Image(systemName: "figure.run").imageScale(.small).foregroundStyle(colorKeep1)
                 MyText("\(health.excerciseTime)").foregroundStyle(colorKeep1)
                 Image(systemName: "figure.stand").imageScale(.small).foregroundStyle(colorKeep2)
