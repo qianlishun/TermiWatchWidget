@@ -92,4 +92,9 @@ Click to enter, Capabilities -> find WeatherKit and HealthKit ☑️，in App Se
   1. More custom go to /TermiWatchWidget Watch App/View/QCommonView.swift
 
 ### Possible defects
-  1. Due to the refresh mechanism of Widges, there is a limit on the number of daily updates, and there may be a lag in data updates.
+  1. Due to the refresh mechanism of Widges, there is a limit on the number of daily updates, and there may be a lag in data updates.  
+  1. The **healthRefreshInterval** can be modified to adjust the refresh interval of health information.  
+  1. When the data has not been updated for a long time, you can click on the Widget to enter the app and manually refresh it.
+  1. When the language is Chinese, the [DATE] is based on the Chinese lunar calendar, while for other languages it is "EEE MM/dd YYYY". You can change it yourself. TWExtension.swift - currentDate.
+
+  
