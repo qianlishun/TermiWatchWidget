@@ -268,16 +268,16 @@ func getHFWeather(location: CLLocation, handler: (@escaping (WeatherInfo) -> Voi
                         if(result2.code == "200"){
                             let hf = WeatherInfo(current: result.now, weathers: result2.hourly)
                             handler(hf)
-                            
+                            print(hf)
                         }else{
                             print("HF error \(result2.code)")
                             
-            //                handler(HFWeather())
+                            handler(WeatherInfo())
                         }
                         
                     } catch {
                         print("无法连接到服务器 \(error)")
-            //            handler(HFWeather())
+                        handler(WeatherInfo())
                     }
                 }.resume()
 
@@ -285,25 +285,25 @@ func getHFWeather(location: CLLocation, handler: (@escaping (WeatherInfo) -> Voi
             }else{
                 print("HF error \(result.code)")
                 
-//                handler(HFWeather())
+                handler(WeatherInfo())
             }
             
         } catch {
             print("无法连接到服务器 \(error)")
-//            handler(HFWeather())
+            handler(WeatherInfo())
         }
     }.resume()
     
 }
 
 class WidgetLocationManager: NSObject, CLLocationManagerDelegate {
-    @AppStorage("LastLocation", store: UserDefaults(suiteName: "group.com.void.termiWatch"))
+    @AppStorage("LastLocation", store: UserDefaults(suiteName: qGroupBundleID))
     var lastLocation: String = defaultCity{ // Beijing
         didSet{
             print("lastLocation didset")
         }
     }
-    @AppStorage("LastLocationTime", store: UserDefaults(suiteName: "group.com.void.termiWatch"))
+    @AppStorage("LastLocationTime", store: UserDefaults(suiteName: qGroupBundleID))
     var lastLocationTime: String = ""{
         didSet{
             print("LastLocationTime didset")

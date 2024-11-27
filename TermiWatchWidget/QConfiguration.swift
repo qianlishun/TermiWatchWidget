@@ -16,15 +16,26 @@ import SwiftUI
  */
 let HFWeatherKey = ""
 
+let qGroupBundleID = "group.com.void.termiWatch"
+
 let terminalName = "void"
 let leftTopImageName = "LeftTopImage"
 
+let qBGImageNamePre = "Pikachu_"
+let qWeatherImage = "Pikachu_1"
+let qHealthImage = "Pikachu_2"
+let qBGImageCount = 4 // 两组图
+
 let defaultCity = "39.9042, 116.4074" //  (纬度, 经度) (latitude,longitude)
+
+let qWeatherImageKey = "qWeatherImageKey"
+let qHealthImageKey = "qHealthImageKey"
 
 /// 健康信息刷新间隔 单位：分钟。 按需调节，由于每天刷新有限制，设置过多的频次可能会导致刷新次数用尽后当天不再刷新。
 /// Health info refresh interval, unit: minutes. On demand adjustment, due to the daily refresh limit, setting too many refresh frequencies may result in not refreshing again on the same day after the refresh times are exhausted.
 let healthRefreshInterval = 15
 
+let colorDate = Color.orange
 let colorAlert1 = Color.yellow
 let colorAlert2 = Color.red
 let colorTemp = Color(r: 253, g: 143, b: 63)

@@ -6,6 +6,7 @@
 //
 
 import HealthKit
+import SwiftUICore
 
 struct HealthInfo {
     var steps: Int
@@ -13,13 +14,17 @@ struct HealthInfo {
     var excerciseTime: Int
     var standHours: Int
     var heartRate: Int
-    
+    var bgImage: String? = qHealthImage
+
     init(steps: Int, excercise: Int, excerciseTime: Int, standHours: Int, heartRate: Int) {
+        let userdefaults = UserDefaults.init(suiteName: qGroupBundleID)
+
         self.steps = steps
         self.excercise = excercise
         self.excerciseTime = excerciseTime
         self.standHours = standHours
         self.heartRate = heartRate
+        self.bgImage = userdefaults?.string(forKey: qHealthImageKey) ?? qHealthImage
     }
     
     init(){

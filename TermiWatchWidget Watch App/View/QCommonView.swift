@@ -13,12 +13,16 @@ struct WeatherViewInfo {
     let after1Hours: QWeather
     let alert: String
     var dateText : String? = nil
-    
+    var bgImage: String? = qWeatherImage
+
     init(current: QWeather, after1Hours: QWeather, alert: String, dateText: String?) {
+        let userdefaults = UserDefaults.init(suiteName: qGroupBundleID)
+
         self.dateText = dateText
         self.current = current
         self.after1Hours = after1Hours
         self.alert = alert
+        self.bgImage = userdefaults?.string(forKey: qWeatherImageKey) ?? qWeatherImage
     }
     
     init(current: QWeather, after1Hours: QWeather, alert: String) {
@@ -45,7 +49,7 @@ struct WeatherRectangularView : View {
             HStack {
                 if((weather.dateText != nil) && weather.dateText!.count > 0){
                     MyText("[DATE]",fontSize: qFontSize+0.5)
-                    MyText(weather.dateText!).frame(maxWidth: .infinity, alignment: .leading).minimumScaleFactor(0.8)
+                    MyText(weather.dateText!).frame(maxWidth: .infinity, alignment: .leading).minimumScaleFactor(0.8).foregroundStyle(colorDate)
                 }else{
                     MyText("user@\(terminalName):~ $ now").frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -90,7 +94,8 @@ struct WeatherRectangularView : View {
                     }.minimumScaleFactor(0.6)
                 }.frame(height: rowHeight)
             }
-        }
+        }.background(Image(weather.bgImage ?? "").resizable()
+            .aspectRatio(contentMode: .fit).opacity(0.35))
     }
 }
 
@@ -133,7 +138,8 @@ struct HealthRectangularView : View {
             HStack {
                 MyText("user@\(terminalName):~ $ ").frame(maxWidth: .infinity, alignment: .leading)
             }.frame(height: rowHeight)
-        }
+        }.background(Image(health.bgImage ?? "").resizable()
+            .aspectRatio(contentMode: .fit).opacity(0.35))
     }
 }
 

@@ -12,7 +12,9 @@ import ClockKit
 struct TermiWatch: App {
     @Environment(\.scenePhase) private var scenePhase
     @State var viewModel = QTermiViewModel()
-    
+    @State var imageIndex = 1
+    let userdefaults = UserDefaults.init(suiteName: qGroupBundleID)
+
 #if targetEnvironment(simulator)
 #else
     let locationMgr = WidgetLocationManager()
@@ -23,6 +25,19 @@ struct TermiWatch: App {
             VStack{
                 Spacer()
                 ContentView(viewModel: viewModel)
+                .onTapGesture {
+                    imageIndex+=2
+                    if(imageIndex>qBGImageCount){
+                        imageIndex = 1;
+                    }
+
+                    let weatherImage = qBGImageNamePre + String(imageIndex);
+                    let healthImage = qBGImageNamePre + String(imageIndex+1);
+                    userdefaults?.setValue(weatherImage, forKey: qWeatherImageKey)
+                    userdefaults?.setValue(healthImage, forKey: qHealthImageKey)
+
+                    viewModel.updateModel()
+                }
                 Spacer()
                 HStack(alignment: .bottom, content: {
                     Button(LocalizedStringKey("Sync Watch Face"), action: addWatchFace).frame(width: 200,height: 50).background(.orange).foregroundStyle(.black).border(.black, width: 1).cornerRadius(5)

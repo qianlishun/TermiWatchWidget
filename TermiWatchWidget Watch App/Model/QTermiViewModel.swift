@@ -29,7 +29,9 @@ class QTermiViewModel {
                     }
                 }else{
                     getHFWeather(location: location) { weather in
-                        self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0], dateText: Date().currentDate())
+                        DispatchQueue.main.async {
+                            self.weather = WeatherViewInfo(current: weather.weathers[0], after1Hours: weather.weathers[1],alert: weather.alerts[0], dateText: Date().currentDate())
+                        }
                     }
                 }
             }

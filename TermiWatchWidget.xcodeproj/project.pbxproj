@@ -201,6 +201,8 @@
 		6E7DD64A2AD5604A003E0C77 /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD6492AD5604A003E0C77 /* WeatherUtils.swift */; };
 		6E7DD64C2AD56891003E0C77 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD64B2AD56891003E0C77 /* Settings.bundle */; };
 		6E7DD6522AD64537003E0C77 /* HealthObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7DD6512AD64537003E0C77 /* HealthObserver.swift */; };
+		6E8910302CF5A68900990085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD63F2AD5554E003E0C77 /* Assets.xcassets */; };
+		6E8910322CF5D05100990085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7DD63F2AD5554E003E0C77 /* Assets.xcassets */; };
 		6EAA2BB62AF0C24600368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
 		6EAA2BB72AF0E39F00368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
 		6EAA2BB82AF0E3A000368E8D /* JieQi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA2BB52AF0C24600368E8D /* JieQi.swift */; };
@@ -254,6 +256,7 @@
 
 /* Begin PBXFileReference section */
 		6E2CC4252AEBCB0B002E58D5 /* QConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QConfiguration.swift; sourceTree = "<group>"; };
+		6E4373BA2C6DE8A500A5CCE9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6E43A4FE2ADCE96A00B90ED9 /* QCommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QCommonView.swift; sourceTree = "<group>"; };
 		6E43A50A2ADCF81C00B90ED9 /* QTermiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTermiViewModel.swift; sourceTree = "<group>"; };
 		6E43A50D2ADD0E7500B90ED9 /* TermiWatchWidget-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TermiWatchWidget-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -336,6 +339,7 @@
 		6E7DD6552AD7D7FC003E0C77 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6E7DD6582AD95212003E0C77 /* TermiWatchWidget Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TermiWatchWidget Watch App.entitlements"; sourceTree = "<group>"; };
 		6E7DD6592AD952B6003E0C77 /* TermiWatchWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TermiWatchWidgetExtension.entitlements; sourceTree = "<group>"; };
+		6E89102F2CF58C7F00990085 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		6EAA2BB52AF0C24600368E8D /* JieQi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JieQi.swift; sourceTree = "<group>"; };
 		6EFD70832B21BFB600143963 /* TermiWatchWidget.watchface */ = {isa = PBXFileReference; lastKnownFileType = file; path = TermiWatchWidget.watchface; sourceTree = "<group>"; };
 		6EFD708A2B21C3D500143963 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -569,6 +573,8 @@
 		6E7DD5DA2AD5542F003E0C77 = {
 			isa = PBXGroup;
 			children = (
+				6E89102F2CF58C7F00990085 /* LICENSE.md */,
+				6E4373BA2C6DE8A500A5CCE9 /* README.md */,
 				6E7DD6592AD952B6003E0C77 /* TermiWatchWidgetExtension.entitlements */,
 				6E7DD5E52AD5542F003E0C77 /* TermiWatchWidget */,
 				6E7DD6052AD5546A003E0C77 /* TermiWatchWidget Watch App */,
@@ -761,6 +767,7 @@
 				6EFD70882B21C3D500143963 /* Localizable.strings in Resources */,
 				6E6935362AE92A0A006085E1 /* HFBundle.bundle in Resources */,
 				6EFD70842B21BFB600143963 /* TermiWatchWidget.watchface in Resources */,
+				6E8910322CF5D05100990085 /* Assets.xcassets in Resources */,
 				6E7DD5F32AD55431003E0C77 /* LaunchScreen.storyboard in Resources */,
 				6E7DD5F02AD55431003E0C77 /* Assets.xcassets in Resources */,
 			);
@@ -774,6 +781,7 @@
 				6EFD70892B21C3D500143963 /* Localizable.strings in Resources */,
 				6E7DD60B2AD5546C003E0C77 /* Assets.xcassets in Resources */,
 				6E6935372AE92A0A006085E1 /* HFBundle.bundle in Resources */,
+				6E8910302CF5A68900990085 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1161,7 +1169,7 @@
 				CODE_SIGN_ENTITLEMENTS = TermiWatchWidget/TermiWatchWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TermiWatchWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "⌚️TermiWidget";
@@ -1178,7 +1186,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.void.TermiWatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.void.termiWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1197,7 +1205,7 @@
 				CODE_SIGN_ENTITLEMENTS = TermiWatchWidget/TermiWatchWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TermiWatchWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "⌚️TermiWidget";
@@ -1214,7 +1222,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.void.TermiWatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.void.termiWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1234,8 +1242,9 @@
 				CODE_SIGN_ENTITLEMENTS = "TermiWatchWidget Watch App/TermiWatchWidget Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"TermiWatchWidget Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TermiWatchWidget-Watch-App-Info.plist";
@@ -1244,14 +1253,14 @@
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Read active energy, resting energy, and dietary energy";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location data will be used to display weather data. ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.void.TermiWatch;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.void.termiWatch;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.void.TermiWatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.void.termiWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1272,7 +1281,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TermiWatchWidget Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TermiWatchWidget-Watch-App-Info.plist";
@@ -1281,14 +1290,14 @@
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Read active energy, resting energy, and dietary energy";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location data will be used to display weather data. ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.void.TermiWatch;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.void.termiWatch;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.void.TermiWatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.void.termiWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1307,7 +1316,7 @@
 				CODE_SIGN_ENTITLEMENTS = TermiWatchWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TermiWatchWidget_Widget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TermiWatchWidgetExtension;
@@ -1322,7 +1331,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.void.TermiWatch.watchkitapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.void.termiWatch.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1339,9 +1348,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = TermiWatchWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TermiWatchWidget_Widget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TermiWatchWidgetExtension;
@@ -1356,8 +1366,9 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.void.TermiWatch.watchkitapp.widget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.void.termiWatch.watchkitapp.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
