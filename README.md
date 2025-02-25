@@ -16,8 +16,12 @@ Thanks for TermiWatch https://github.com/kuglee/TermiWatch/
 # Future
 Use **WeatherKit** to obtain weather information. **WeatherKit** only supports **paid developer accounts**.  
 ~Next, I will add other methods to obtain weather data.~  
-**qweather** has been introduced, and you can apply for a Key to replace the WeatherKit yourself.  https://dev.qweather.com/en/
+**qweather** has been introduced, and you can apply for a Key to replace the WeatherKit yourself.  https://dev.qweather.com/en/  
 
+#### Custom background image added.  
+* Next step, add automatic cropping application for uploading images as background images.  
+  
+  
 # How to install
 
 ## Prerequisites && Adding a developer account to Xcode
@@ -88,7 +92,7 @@ Click to enter, Capabilities -> find WeatherKit and HealthKit ☑️，in App Se
 
 ## Custom UI
   1. Find /TermiWatchWidget/QConfiguration.swift, modify text, color. 
-  1. Image path on TermiWatchWidget/TermiWatchWidget_Widget/Assets.xcassets/LeftTopImage.imageset, you can replace it
+  1. Image path on TermiWatchWidget/TermiWatchWidget_Widget/Assets.xcassets/LeftTopImage / image,  you can replace it
   1. More custom go to /TermiWatchWidget Watch App/View/QCommonView.swift  
   1. When the language is Chinese, the [DATE] is based on the Chinese lunar calendar, while for other languages it is "EEE MM/dd YYYY". You can change it yourself. TWExtension.swift - currentDate.  
 
